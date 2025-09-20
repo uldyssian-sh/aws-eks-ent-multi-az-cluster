@@ -1,4 +1,4 @@
-# AWS Enterprise EKS Multi-AZ Cluster Deployment Guide
+# AWS AWS EKS Enterprise Multi-AZ Cluster Deployment Guide
 
 ## Overview
 
@@ -63,8 +63,8 @@ The deployment requires the following AWS permissions:
 
 ```bash
 # Clone repository
-git clone https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster.git
-cd aws-ent-eks-multi-az-cluster
+git clone https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster.git
+cd aws-eks-ent-multi-az-cluster
 
 # Check prerequisites
 ./scripts/check-prerequisites.sh
@@ -103,7 +103,7 @@ terraform apply tfplan
 
 ```bash
 # Update kubeconfig
-aws eks update-kubeconfig --region us-west-2 --name eks-multi-az-cluster-dev
+aws eks update-kubeconfig --region us-west-2 --name aws-eks-ent-multi-az-cluster-dev
 
 # Verify cluster access
 kubectl get nodes
@@ -220,9 +220,9 @@ kubectl get nodes
 ## Support
 
 For enterprise support and additional documentation:
-- [GitHub Issues](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues)
-- [Documentation Wiki](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/wiki)
-- [Security Policy](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/security/policy)
+- [GitHub Issues](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/issues)
+- [Documentation Wiki](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/wiki)
+- [Security Policy](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/security/policy)
 
 ## License
 

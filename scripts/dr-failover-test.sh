@@ -9,11 +9,11 @@ DR_REGION="us-east-1"
 
 # Check primary cluster health
 echo "🏥 Checking primary cluster health..."
-aws eks describe-cluster --name "eks-multi-az-cluster-prod" --region $PRIMARY_REGION >/dev/null 2>&1 && echo "  ✅ Primary cluster accessible" || echo "  ❌ Primary cluster unavailable"
+aws eks describe-cluster --name "aws-eks-ent-multi-az-cluster-prod" --region $PRIMARY_REGION >/dev/null 2>&1 && echo "  ✅ Primary cluster accessible" || echo "  ❌ Primary cluster unavailable"
 
 # Simulate failover to DR region
 echo "🔄 Simulating failover to DR region..."
-aws eks update-kubeconfig --name "eks-multi-az-cluster-dr" --region $DR_REGION 2>/dev/null || echo "  ⚠️ DR cluster not found (expected in test)"
+aws eks update-kubeconfig --name "aws-eks-ent-multi-az-cluster-dr" --region $DR_REGION 2>/dev/null || echo "  ⚠️ DR cluster not found (expected in test)"
 
 # Test backup restoration
 echo "💾 Testing backup restoration..."

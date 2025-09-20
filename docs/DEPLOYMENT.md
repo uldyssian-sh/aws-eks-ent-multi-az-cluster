@@ -14,7 +14,7 @@ terraform init
 terraform apply
 
 # Configure kubectl
-aws eks update-kubeconfig --region us-west-2 --name eks-multi-az-cluster-dev
+aws eks update-kubeconfig --region us-west-2 --name aws-eks-ent-multi-az-cluster-dev
 ```
 
 ## Environments

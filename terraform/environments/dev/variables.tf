@@ -1,7 +1,7 @@
 variable "cluster_name" {
   description = "Name of the EKS cluster"
   type        = string
-  default     = "eks-multi-az-cluster-dev"
+  default     = "aws-eks-ent-multi-az-cluster-dev"
 }
 
 variable "region" {

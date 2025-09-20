@@ -3,7 +3,7 @@
 set -e
 
 REGION=${AWS_REGION:-us-west-2}
-CLUSTER_NAME=${CLUSTER_NAME:-eks-multi-az-cluster-prod}
+CLUSTER_NAME=${CLUSTER_NAME:-aws-eks-ent-multi-az-cluster-prod}
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 

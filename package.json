@@ -1,5 +1,5 @@
 {
-  "name": "@enterprise/eks-multi-az-cluster",
+  "name": "@enterprise/aws-eks-ent-multi-az-cluster",
   "version": "1.0.0",
   "description": "Enterprise-grade multi-AZ EKS cluster with advanced security and monitoring",
   "main": "index.js",
@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster.git"
+    "url": "https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster.git"
   },
   "bugs": {
-    "url": "https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues"
+    "url": "https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/issues"
   },
-  "homepage": "https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster#readme",
+  "homepage": "https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster#readme",
   "devDependencies": {},
   "dependencies": {},
   "engines": {

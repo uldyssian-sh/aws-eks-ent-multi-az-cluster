@@ -30,7 +30,7 @@ EOF
 
 # Apply protection
 echo "📋 Applying branch protection rules..."
-if ! gh api repos/uldyssian-sh/aws-ent-eks-multi-az-cluster/branches/main/protection \
+if ! gh api repos/uldyssian-sh/aws-eks-ent-multi-az-cluster/branches/main/protection \
   --method PUT \
   --input "$TEMP_FILE"; then
   echo "❌ Failed to set branch protection"

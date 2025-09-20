@@ -32,7 +32,7 @@ terraform apply -auto-approve tfplan
 
 # Configure kubectl
 echo "⚙️ Configuring kubectl..."
-aws eks --region "$REGION" update-kubeconfig --name "eks-multi-az-cluster-$ENV"
+aws eks --region "$REGION" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-$ENV"
 
 # Wait for cluster readiness
 echo "⏳ Waiting for cluster readiness..."

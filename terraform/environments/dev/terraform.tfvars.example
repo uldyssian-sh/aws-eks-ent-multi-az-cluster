@@ -1,8 +1,8 @@
-# AWS Enterprise EKS Multi-AZ Cluster Configuration
+# AWS EKS Enterprise Multi-AZ Cluster Configuration
 # Development Environment
 
 # Basic Configuration
-cluster_name = "eks-multi-az-cluster-dev"
+cluster_name = "aws-eks-ent-multi-az-cluster-dev"
 region       = "us-west-2"
 environment  = "development"
 

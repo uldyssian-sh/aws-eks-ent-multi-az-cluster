@@ -37,7 +37,7 @@ done
 # Delete any remaining EKS clusters
 echo "🎯 Checking for remaining EKS clusters..."
 aws eks list-clusters --query 'clusters[]' --output text 2>/dev/null | while read cluster; do
-    if [[ $cluster == *"eks-multi-az-cluster"* ]]; then
+    if [[ $cluster == *"aws-eks-ent-multi-az-cluster"* ]]; then
         echo "  🗑️ Deleting cluster: $cluster"
         aws eks delete-cluster --name "$cluster" >/dev/null 2>&1 || true
     fi
@@ -45,7 +45,7 @@ done
 
 # Delete VPCs with our naming pattern
 echo "🌐 Checking for remaining VPCs..."
-aws ec2 describe-vpcs --filters "Name=tag:Project,Values=eks-multi-az-cluster" --query 'Vpcs[].VpcId' --output text 2>/dev/null | while read vpc; do
+aws ec2 describe-vpcs --filters "Name=tag:Project,Values=aws-eks-ent-multi-az-cluster" --query 'Vpcs[].VpcId' --output text 2>/dev/null | while read vpc; do
     if [ -n "$vpc" ]; then
         echo "  🗑️ Deleting VPC: $vpc"
         aws ec2 delete-vpc --vpc-id "$vpc" >/dev/null 2>&1 || true
@@ -77,7 +77,7 @@ done
 
 # Delete security groups with our naming pattern
 echo "🛡️ Checking for security groups..."
-aws ec2 describe-security-groups --filters "Name=tag:Project,Values=eks-multi-az-cluster" --query 'SecurityGroups[].GroupId' --output text 2>/dev/null | while read sg; do
+aws ec2 describe-security-groups --filters "Name=tag:Project,Values=aws-eks-ent-multi-az-cluster" --query 'SecurityGroups[].GroupId' --output text 2>/dev/null | while read sg; do
     if [ -n "$sg" ]; then
         echo "  🗑️ Deleting security group: $sg"
         aws ec2 delete-security-group --group-id "$sg" >/dev/null 2>&1 || true

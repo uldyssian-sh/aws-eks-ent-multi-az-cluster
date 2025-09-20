@@ -2,7 +2,7 @@
 
 ## 🏗️ Overview
 
-The AWS Enterprise EKS Multi-AZ Cluster implements a **zero single point of failure (SPOF)** architecture across three AWS availability zones, providing **99.99% uptime SLA** with enterprise-grade security and compliance.
+The AWS AWS EKS Enterprise Multi-AZ Cluster implements a **zero single point of failure (SPOF)** architecture across three AWS availability zones, providing **99.99% uptime SLA** with enterprise-grade security and compliance.
 
 ## 🎯 Architecture Principles
 

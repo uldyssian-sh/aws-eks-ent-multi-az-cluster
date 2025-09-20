@@ -1,4 +1,4 @@
-# Contributing to Enterprise EKS Multi-AZ Cluster
+# Contributing to AWS EKS Enterprise Multi-AZ Cluster
 
 Thank you for your interest in contributing! This document provides guidelines for contributing to this enterprise-grade Kubernetes platform.
 
@@ -10,8 +10,8 @@ This project adheres to a code of conduct. By participating, you are expected to
 
 ### 1. Fork and Clone
 ```bash
-git clone https://github.com/YOUR_USERNAME/aws-ent-eks-multi-az-cluster.git
-cd aws-ent-eks-multi-az-cluster
+git clone https://github.com/YOUR_USERNAME/aws-eks-ent-multi-az-cluster.git
+cd aws-eks-ent-multi-az-cluster
 ```
 
 ### 2. Create Feature Branch

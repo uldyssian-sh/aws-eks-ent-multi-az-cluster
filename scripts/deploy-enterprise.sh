@@ -29,7 +29,7 @@ terraform plan -out=tfplan
 terraform apply -auto-approve tfplan
 
 # Configure kubectl
-aws eks --region "$REGION" update-kubeconfig --name "eks-multi-az-cluster-$ENV"
+aws eks --region "$REGION" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-$ENV"
 
 # Wait for nodes
 kubectl wait --for=condition=Ready nodes --all --timeout=300s

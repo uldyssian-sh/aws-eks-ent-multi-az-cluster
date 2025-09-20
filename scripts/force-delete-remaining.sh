@@ -8,7 +8,7 @@ REGION="us-west-2"
 
 # Wait for EKS cluster deletion to complete
 echo "⏳ Waiting for EKS cluster deletion..."
-aws eks wait cluster-deleted --name eks-multi-az-cluster-dev --region $REGION 2>/dev/null || echo "  ✅ Cluster deletion in progress"
+aws eks wait cluster-deleted --name aws-eks-ent-multi-az-cluster-dev --region $REGION 2>/dev/null || echo "  ✅ Cluster deletion in progress"
 
 # Force delete all security groups
 echo "🛡️ Force deleting security groups..."
