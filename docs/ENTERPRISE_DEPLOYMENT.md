@@ -1,4 +1,4 @@
-# Enterprise EKS Multi-AZ Cluster Deployment Guide
+# AWS Enterprise EKS Multi-AZ Cluster Deployment Guide
 
 ## Overview
 

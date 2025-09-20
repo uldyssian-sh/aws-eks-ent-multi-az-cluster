@@ -1,4 +1,4 @@
-# Enterprise EKS Deployment Status
+# AWS Enterprise EKS Deployment Status
 
 ## ✅ Successfully Deployed
 - **EKS Cluster**: eks-multi-az-cluster-dev (3 nodes)

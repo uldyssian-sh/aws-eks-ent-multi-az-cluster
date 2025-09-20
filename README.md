@@ -1,10 +1,10 @@
-# AWS Enterprise EKS Multi-AZ Cluster
+# AWS AWS Enterprise EKS Multi-AZ Cluster
 
 <div align="center">
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│            AWS Enterprise EKS Multi-AZ                      │
+│            AWS AWS Enterprise EKS Multi-AZ                      │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
 │  │   AZ-2a     │    │   AZ-2b     │    │   AZ-2c     │     │

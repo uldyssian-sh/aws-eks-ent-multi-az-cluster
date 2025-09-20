@@ -1,6 +1,6 @@
 # Assets Directory
 
-Architecture diagrams for Enterprise EKS Multi-AZ Cluster.
+Architecture diagrams for AWS Enterprise EKS Multi-AZ Cluster.
 
 ## Diagrams Needed
 

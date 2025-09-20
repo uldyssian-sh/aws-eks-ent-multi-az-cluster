@@ -1,4 +1,4 @@
-# Enterprise EKS Features
+# AWS Enterprise EKS Features
 
 ## 🔒 Security Stack
 - **Falco** - Runtime security monitoring (7 pods)

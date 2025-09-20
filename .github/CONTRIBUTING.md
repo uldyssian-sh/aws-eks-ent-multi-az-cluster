@@ -10,8 +10,8 @@ This project adheres to a code of conduct. By participating, you are expected to
 
 ### 1. Fork and Clone
 ```bash
-git clone https://github.com/YOUR_USERNAME/enterprise-eks-multi-az-cluster.git
-cd enterprise-eks-multi-az-cluster
+git clone https://github.com/YOUR_USERNAME/aws-ent-eks-multi-az-cluster.git
+cd aws-ent-eks-multi-az-cluster
 ```
 
 ### 2. Create Feature Branch

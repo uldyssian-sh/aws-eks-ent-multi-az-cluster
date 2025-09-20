@@ -1,6 +1,6 @@
-# Enterprise EKS Multi-AZ Cluster Wiki
+# AWS Enterprise EKS Multi-AZ Cluster Wiki
 
-Welcome to the comprehensive documentation for the **Enterprise EKS Multi-AZ Cluster** - a production-ready Kubernetes platform designed for mission-critical workloads.
+Welcome to the comprehensive documentation for the **AWS Enterprise EKS Multi-AZ Cluster** - a production-ready Kubernetes platform designed for mission-critical workloads.
 
 ## 🎯 Project Overview
 

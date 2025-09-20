@@ -1,4 +1,4 @@
-# Complete Enterprise EKS Platform
+# Complete AWS Enterprise EKS Platform
 
 ## 🏗️ Infrastructure (28 Terraform files)
 - **Multi-AZ VPC** - 3 availability zones

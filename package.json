@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster.git"
+    "url": "https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster.git"
   },
   "bugs": {
-    "url": "https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/issues"
+    "url": "https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues"
   },
-  "homepage": "https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster#readme",
+  "homepage": "https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster#readme",
   "devDependencies": {},
   "dependencies": {},
   "engines": {

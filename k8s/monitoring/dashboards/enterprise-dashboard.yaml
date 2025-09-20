@@ -10,7 +10,7 @@ data:
     {
       "dashboard": {
         "id": null,
-        "title": "Enterprise EKS Overview",
+        "title": "AWS Enterprise EKS Overview",
         "tags": ["kubernetes", "enterprise"],
         "timezone": "browser",
         "panels": [
