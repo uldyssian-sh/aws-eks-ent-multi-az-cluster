@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       
     - name: Setup kubeval
       run: |
@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       
     - name: Run ShellCheck
       run: |
@@ -107,7 +107,7 @@ jobs:
     needs: [security-scan, terraform-validate, kubernetes-lint]
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       
     - name: Setup Node.js
       uses: actions/setup-node@v3
