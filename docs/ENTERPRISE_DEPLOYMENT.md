@@ -63,8 +63,8 @@ The deployment requires the following AWS permissions:
 
 ```bash
 # Clone repository
-git clone https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster.git
-cd enterprise-eks-multi-az-cluster
+git clone https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster.git
+cd aws-ent-eks-multi-az-cluster
 
 # Check prerequisites
 ./scripts/check-prerequisites.sh
@@ -220,9 +220,9 @@ kubectl get nodes
 ## Support
 
 For enterprise support and additional documentation:
-- [GitHub Issues](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/issues)
-- [Documentation Wiki](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/wiki)
-- [Security Policy](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/security/policy)
+- [GitHub Issues](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues)
+- [Documentation Wiki](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/wiki)
+- [Security Policy](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/security/policy)
 
 ## License
 

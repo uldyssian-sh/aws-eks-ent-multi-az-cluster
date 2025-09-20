@@ -32,8 +32,8 @@ aws eks list-clusters --region us-west-2
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster.git
-cd enterprise-eks-multi-az-cluster
+git clone https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster.git
+cd aws-ent-eks-multi-az-cluster
 ```
 
 ### Step 2: Prerequisites Check
@@ -208,7 +208,7 @@ kubectl get nodes
 ### Getting Help
 
 - **[Troubleshooting Guide](Troubleshooting)** - Detailed troubleshooting
-- **[GitHub Issues](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/issues)** - Report bugs
+- **[GitHub Issues](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues)** - Report bugs
 - **[AWS EKS Troubleshooting](https://docs.aws.amazon.com/eks/latest/userguide/troubleshooting.html)** - Official AWS guide
 - **[Kubernetes Troubleshooting](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)** - K8s debugging
 

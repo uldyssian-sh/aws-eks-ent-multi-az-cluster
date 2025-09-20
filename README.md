@@ -1,10 +1,10 @@
-# Enterprise EKS Multi-AZ Cluster
+# AWS Enterprise EKS Multi-AZ Cluster
 
 <div align="center">
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                Enterprise EKS Multi-AZ                      │
+│            AWS Enterprise EKS Multi-AZ                      │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
 │  │   AZ-2a     │    │   AZ-2b     │    │   AZ-2c     │     │
@@ -66,8 +66,8 @@ helm >= 3.0
 ### Infrastructure Deployment
 ```bash
 # Clone repository
-git clone https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster.git
-cd enterprise-eks-multi-az-cluster
+git clone https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster.git
+cd aws-ent-eks-multi-az-cluster
 
 # Configure variables
 cp terraform/environments/dev/terraform.tfvars.example terraform/environments/dev/terraform.tfvars
@@ -189,9 +189,9 @@ spec:
 
 ## 🤝 Contributing
 
-1. **[Fork Repository](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/fork)** - Create your fork
+1. **[Fork Repository](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/fork)** - Create your fork
 2. **[Development Setup](docs/ENTERPRISE_DEPLOYMENT.md)** - Local development environment
-3. **[Submit Pull Request](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/pulls)** - Contribute improvements
+3. **[Submit Pull Request](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/pulls)** - Contribute improvements
 
 ## 📄 License
 
@@ -199,7 +199,7 @@ This project is licensed under the MIT License - see the **[LICENSE](LICENSE)** 
 
 ## 🆘 Support
 
-- **[GitHub Issues](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/issues)** - Bug reports and feature requests
-- **[Discussions](https://github.com/uldyssian-sh/enterprise-eks-multi-az-cluster/discussions)** - Community support and Q&A
+- **[GitHub Issues](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues)** - Bug reports and feature requests
+- **[Discussions](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/discussions)** - Community support and Q&A
 - **[Security Policy](SECURITY.md)** - Vulnerability reporting
 - **[AWS EKS Documentation](https://docs.aws.amazon.com/eks/)** - Official AWS EKS documentation# Trigger deployment
