@@ -1,10 +1,10 @@
-# AWS AWS AWS EKS Enterprise Multi-AZ Cluster
+# AWS EKS Enterprise Multi-AZ Cluster
 
 <div align="center">
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│            AWS AWS AWS EKS Enterprise Multi-AZ                      │
+│            AWS EKS Enterprise Multi-AZ                     │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
 │  │   AZ-2a     │    │   AZ-2b     │    │   AZ-2c     │     │
@@ -154,7 +154,7 @@ spec:
 ### Getting Started
 - **[Enterprise Deployment Guide](docs/ENTERPRISE_DEPLOYMENT.md)** - Complete deployment instructions
 - **[Prerequisites Check](scripts/check-prerequisites.sh)** - Validate environment setup
-- **[Configuration Examples](terraform/environments/dev/terraform.tfvars.example)** - Sample configurations
+- **[Development Setup](scripts/setup-dev-environment.sh)** - Local development environment
 
 ### Operations
 - **[Security Scanning](scripts/security-scan.sh)** - Automated security assessment
@@ -171,7 +171,7 @@ spec:
 ### CI/CD Pipeline
 - **[GitHub Actions](.github/workflows/enterprise-ci.yml)** - Automated testing and deployment
 - **[Security Scanning](.github/workflows/security.yml)** - Vulnerability assessment
-- **[Cost Estimation](terraform/modules/cost-optimization/)** - Infrastructure cost analysis
+- **[Cost Optimization](terraform/modules/cost-optimization/)** - Infrastructure cost analysis
 
 ### Terraform Modules
 - **[EKS Module](terraform/modules/eks/)** - Complete EKS cluster configuration
@@ -190,7 +190,7 @@ spec:
 ## 🤝 Contributing
 
 1. **[Fork Repository](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/fork)** - Create your fork
-2. **[Development Setup](docs/ENTERPRISE_DEPLOYMENT.md)** - Local development environment
+2. **[Development Setup](scripts/setup-dev-environment.sh)** - Local development environment
 3. **[Submit Pull Request](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/pulls)** - Contribute improvements
 
 ## 📄 License
@@ -202,4 +202,4 @@ This project is licensed under the MIT License - see the **[LICENSE](LICENSE)** 
 - **[GitHub Issues](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/issues)** - Bug reports and feature requests
 - **[Discussions](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/discussions)** - Community support and Q&A
 - **[Security Policy](SECURITY.md)** - Vulnerability reporting
-- **[AWS EKS Documentation](https://docs.aws.amazon.com/eks/)** - Official AWS EKS documentation# Trigger deployment
+- **[AWS EKS Documentation](https://docs.aws.amazon.com/eks/)** - Official AWS EKS documentation
