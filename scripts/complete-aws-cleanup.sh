@@ -36,8 +36,8 @@ done
 
 # Delete any remaining EKS clusters
 echo "🎯 Checking for remaining EKS clusters..."
-aws eks list-clusters --query 'clusters[]' --output text 2>/dev/null | while read cluster; do
-    if [[ $cluster == *"aws-eks-ent-multi-az-cluster"* ]]; then
+aws eks list-clusters --query 'clusters[]' --output text 2>/dev/null | while read -r cluster; do
+    if [[ "$cluster" == *"aws-eks-ent-multi-az-cluster"* ]]; then
         echo "  🗑️ Deleting cluster: $cluster"
         aws eks delete-cluster --name "$cluster" >/dev/null 2>&1 || true
     fi
@@ -45,8 +45,8 @@ done
 
 # Delete VPCs with our naming pattern
 echo "🌐 Checking for remaining VPCs..."
-aws ec2 describe-vpcs --filters "Name=tag:Project,Values=aws-eks-ent-multi-az-cluster" --query 'Vpcs[].VpcId' --output text 2>/dev/null | while read vpc; do
-    if [ -n "$vpc" ]; then
+aws ec2 describe-vpcs --filters "Name=tag:Project,Values=aws-eks-ent-multi-az-cluster" --query 'Vpcs[].VpcId' --output text 2>/dev/null | while read -r vpc; do
+    if [[ -n "$vpc" ]]; then
         echo "  🗑️ Deleting VPC: $vpc"
         aws ec2 delete-vpc --vpc-id "$vpc" >/dev/null 2>&1 || true
     fi
