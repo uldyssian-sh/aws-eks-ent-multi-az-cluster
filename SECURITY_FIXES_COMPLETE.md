@@ -1,25 +1,25 @@
-# Bezpečnostné opravy dokončené ✅
+# Security Fixes Complete ✅
 
-## Opravené kritické problémy:
+## Fixed Critical Issues:
 
 ### 🔒 EKS Cluster Security
-- ✅ Zakázaný public access (iba private)
-- ✅ Obmedzené CIDR ranges
+- ✅ Disabled public access (private only)
+- ✅ Restricted CIDR ranges
 - ✅ Proper security groups
 
 ### 🔐 Encryption & Certificates  
 - ✅ SNS topic KMS encryption
-- ✅ TLS cert validation a renewal
+- ✅ TLS cert validation and renewal
 - ✅ Proper cert-manager integration
 
 ### 👤 RBAC & Access Control
-- ✅ Obmedzené admin práva (nie cluster-admin)
+- ✅ Limited admin privileges (not cluster-admin)
 - ✅ Proper ServiceAccounts
 - ✅ Least privilege principle
 
 ### 🛡️ Security Components
 - ✅ Gatekeeper proper error handling
-- ✅ External Secrets optimalizácia
+- ✅ External Secrets optimization
 - ✅ Chaos Monkey security context
 - ✅ Network policies validation
 
@@ -33,17 +33,17 @@
 - ✅ Proper validation checks
 - ✅ Fail-fast mechanisms
 
-## Bezpečnostný stav: 🟢 PRODUKČNE PRIPRAVENÝ
+## Security Status: 🟢 PRODUCTION READY
 
-Repozitár je teraz bezpečný pre produkčné nasadenie s implementovanými:
+Repository is now secure for production deployment with implemented:
 - Zero-trust network policies
 - Proper encryption at rest
 - Secure RBAC model
 - Comprehensive monitoring
 - Fail-safe deployment scripts
 
-## Ďalšie odporúčania:
-1. Pravidelné security audity
+## Additional Recommendations:
+1. Regular security audits
 2. Automated vulnerability scanning
 3. Secrets rotation policy
 4. Backup & disaster recovery testing

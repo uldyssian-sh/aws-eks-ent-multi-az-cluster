@@ -1,82 +1,82 @@
-# Súhrn opráv pre Enterprise EKS Multi-AZ Cluster
+# Fixes Summary for Enterprise EKS Multi-AZ Cluster
 
-## Opravené kritické problémy
+## Fixed Critical Issues
 
-### 1. Terraform moduly
+### 1. Terraform Modules
 - **CloudWatch monitoring** (`terraform/modules/monitoring/cloudwatch.tf`)
-  - Pridané chýbajúce resources: `aws_cloudwatch_log_group`, `aws_sns_topic`
-  - Opravené dependencies pre log metric filter
-  - Pridané správne error handling
+  - Added missing resources: `aws_cloudwatch_log_group`, `aws_sns_topic`
+  - Fixed dependencies for log metric filter
+  - Added proper error handling
 
-- **EKS modul** (`terraform/modules/eks/main.tf`)
-  - Opravené bezpečnostné nastavenia VPC config
-  - Pridané podmienené nastavenie encryption config
-  - Pridané cluster logging
-  - Pridané security group IDs support
+- **EKS module** (`terraform/modules/eks/main.tf`)
+  - Fixed security settings for VPC config
+  - Added conditional encryption config setup
+  - Added cluster logging
+  - Added security group IDs support
 
 - **EKS variables** (`terraform/modules/eks/variables.tf`)
-  - Pridané chýbajúce premenné: `cluster_security_group_ids`, `cluster_log_types`
+  - Added missing variables: `cluster_security_group_ids`, `cluster_log_types`
 
-### 2. Shell skripty
+### 2. Shell Scripts
 - **Nuclear cleanup** (`scripts/nuclear-cleanup.sh`)
-  - Opravené citácie premenných (použitie dvojitých úvodzoviek)
-  - Pridané validácie pre prázdne premenné
-  - Zlepšené error handling s `read -r`
+  - Fixed variable quoting (using double quotes)
+  - Added validations for empty variables
+  - Improved error handling with `read -r`
 
 - **Force delete** (`scripts/force-delete-remaining.sh`)
-  - Pridaná dokumentácia a komentáre
-  - Opravené bash strict mode (`set -euo pipefail`)
-  - Opravené citácie všetkých premenných
-  - Pridané validácie pre prázdne hodnoty
+  - Added documentation and comments
+  - Fixed bash strict mode (`set -euo pipefail`)
+  - Fixed quoting for all variables
+  - Added validations for empty values
 
 - **Deploy enterprise** (`scripts/deploy-enterprise.sh`)
-  - Pridané lepšie error handling pre každý krok
-  - Pridané validácie pre existenciu adresárov
-  - Zlepšené informačné výstupy
-  - Pridané cluster connectivity checks
+  - Added better error handling for each step
+  - Added validations for directory existence
+  - Improved informational outputs
+  - Added cluster connectivity checks
 
-### 3. Kubernetes manifesty
+### 3. Kubernetes Manifests
 - **Gatekeeper** (`k8s/security/gatekeeper.yaml`)
-  - Pridané timeout a failure threshold pre health checks
-  - Zlepšené security context (runAsGroup, readOnlyRootFilesystem)
-  - Pridané environment variables pre pod info
+  - Added timeout and failure threshold for health checks
+  - Improved security context (runAsGroup, readOnlyRootFilesystem)
+  - Added environment variables for pod info
 
 - **ArgoCD** (`k8s/gitops/argocd.yaml`)
-  - Opravené health check endpoints
-  - Pridané timeout a failure threshold
-  - Zlepšené security context
-  - Pridané volumes pre tmp a var/run
-  - Pridaný ServiceAccount a Service
+  - Fixed health check endpoints
+  - Added timeout and failure threshold
+  - Improved security context
+  - Added volumes for tmp and var/run
+  - Added ServiceAccount and Service
 
-## Odporúčania pre ďalšie zlepšenia
+## Recommendations for Further Improvements
 
-### Bezpečnosť
-1. Implementovať Network Policies pre všetky namespaces
-2. Pridať Pod Security Standards
-3. Konfigurovať RBAC pre všetky služby
-4. Implementovať secrets encryption at rest
+### Security
+1. Implement Network Policies for all namespaces
+2. Add Pod Security Standards
+3. Configure RBAC for all services
+4. Implement secrets encryption at rest
 
 ### Monitoring
-1. Pridať custom metrics pre aplikácie
-2. Konfigurovať alerting rules
-3. Implementovať distributed tracing
-4. Pridať cost monitoring
+1. Add custom metrics for applications
+2. Configure alerting rules
+3. Implement distributed tracing
+4. Add cost monitoring
 
-### Automatizácia
-1. Implementovať GitOps workflow
-2. Pridať automated testing
-3. Konfigurovať backup stratégiu
-4. Implementovať disaster recovery
+### Automation
+1. Implement GitOps workflow
+2. Add automated testing
+3. Configure backup strategy
+4. Implement disaster recovery
 
 ### Performance
-1. Optimalizovať resource requests/limits
-2. Implementovať HPA/VPA
-3. Konfigurovať cluster autoscaling
-4. Optimalizovať storage classes
+1. Optimize resource requests/limits
+2. Implement HPA/VPA
+3. Configure cluster autoscaling
+4. Optimize storage classes
 
-## Ďalšie kroky
-1. Otestovať všetky opravené skripty
-2. Validovať Terraform konfiguráciu
-3. Spustiť security scan
-4. Implementovať monitoring dashboards
-5. Dokumentovať deployment proces
+## Next Steps
+1. Test all fixed scripts
+2. Validate Terraform configuration
+3. Run security scan
+4. Implement monitoring dashboards
+5. Document deployment process
