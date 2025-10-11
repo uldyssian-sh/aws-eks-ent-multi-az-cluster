@@ -19,6 +19,14 @@ spec:
         app: gatekeeper
     spec:
       serviceAccountName: gatekeeper-admin
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      volumes:
+      - name: tmp
+        emptyDir: {}
       containers:
       - name: manager
         image: openpolicyagent/gatekeeper:v3.14.0
@@ -52,6 +60,9 @@ spec:
           capabilities:
             drop:
             - ALL
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
         env:
         - name: POD_NAMESPACE
           valueFrom:
@@ -61,6 +72,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+        - name: GATEKEEPER_OPERATION
+          value: "webhook"
         resources:
           requests:
             memory: "256Mi"

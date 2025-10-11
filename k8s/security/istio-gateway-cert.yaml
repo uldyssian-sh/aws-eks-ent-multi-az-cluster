@@ -4,6 +4,13 @@ metadata:
   name: istio-gateway-cert
   namespace: istio-system
 type: kubernetes.io/tls
+annotations:
+  cert-manager.io/issuer: "selfsigned-issuer"
+  cert-manager.io/common-name: "istio-gateway"
 data:
-  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0t # placeholder cert
-  tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0t # placeholder key
+  tls.crt: |
+    # This will be populated by cert-manager
+    # For production, use proper CA-signed certificates
+  tls.key: |
+    # This will be populated by cert-manager
+    # Private key will be generated automatically

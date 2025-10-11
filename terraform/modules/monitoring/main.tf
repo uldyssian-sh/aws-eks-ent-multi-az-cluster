@@ -8,7 +8,9 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   statistic           = "Average"
   threshold           = "80"
   alarm_description   = "EKS CPU utilization high"
-  alarm_actions       = [aws_sns_topic.alerts.arn]
+  alarm_actions       = var.enable_alerts ? [aws_sns_topic.alerts.arn] : []
+  ok_actions          = var.enable_alerts ? [aws_sns_topic.alerts.arn] : []
+  treat_missing_data  = "breaching"
 
   dimensions = {
     ClusterName = var.cluster_name

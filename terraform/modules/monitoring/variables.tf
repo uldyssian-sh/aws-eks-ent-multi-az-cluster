@@ -84,3 +84,9 @@ variable "kms_key_arn" {
   type        = string
   default     = ""
 }
+
+variable "enable_alerts" {
+  description = "Enable CloudWatch alerts"
+  type        = bool
+  default     = true
+}

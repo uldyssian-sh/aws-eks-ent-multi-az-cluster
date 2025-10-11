@@ -12,10 +12,15 @@ echo "🌍 Region: $REGION"
 echo "🏢 Cluster: $CLUSTER_NAME"
 
 # Deploy infrastructure
+if [[ ! -d "$PROJECT_ROOT/terraform/environments/prod" ]]; then
+  echo "❌ Production environment not found"
+  exit 1
+fi
+
 cd "$PROJECT_ROOT/terraform/environments/prod"
-terraform init
-terraform plan -out=tfplan
-terraform apply -auto-approve tfplan
+terraform init || { echo "❌ Terraform init failed"; exit 1; }
+terraform plan -out=tfplan || { echo "❌ Terraform plan failed"; exit 1; }
+terraform apply -auto-approve tfplan || { echo "❌ Terraform apply failed"; exit 1; }
 
 # Configure kubectl
 aws eks --region "$REGION" update-kubeconfig --name "$CLUSTER_NAME"
