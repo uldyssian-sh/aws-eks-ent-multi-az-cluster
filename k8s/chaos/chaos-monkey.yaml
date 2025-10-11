@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: chaos-engineering
+  labels:
+    name: chaos-engineering
+    security.istio.io/tlsMode: istio
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -18,12 +21,19 @@ spec:
       labels:
         app: chaos-monkey
     spec:
+      serviceAccountName: chaos-monkey
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65534
+        runAsGroup: 65534
+        fsGroup: 65534
       containers:
       - name: chaos-monkey
         image: quay.io/linki/chaoskube:v0.21.0
         securityContext:
           runAsNonRoot: true
           runAsUser: 65534
+          runAsGroup: 65534
           allowPrivilegeEscalation: false
           capabilities:
             drop:
@@ -33,3 +43,54 @@ spec:
         - --interval=10m
         - --dry-run
         - --annotation-selector=chaos.alpha.kubernetes.io/enabled=true
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: chaos-monkey
+  namespace: chaos-engineering
+automountServiceAccountToken: false
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: chaos-monkey
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["list", "delete", "get"]
+- apiGroups: [""]
+  resources: ["events"]
+  verbs: ["create"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: chaos-monkey
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: chaos-monkey
+subjects:
+- kind: ServiceAccount
+  name: chaos-monkey
+  namespace: chaos-engineering

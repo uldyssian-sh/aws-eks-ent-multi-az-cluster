@@ -12,5 +12,14 @@ spec:
     name: selfsigned-issuer
     kind: ClusterIssuer
   dnsNames:
-  - "*.${var.domain_name}"
-  - "${var.domain_name}"
+  - "*.example.com"
+  - "example.com"
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days
+  subject:
+    organizations:
+    - "EKS Cluster"
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 2048

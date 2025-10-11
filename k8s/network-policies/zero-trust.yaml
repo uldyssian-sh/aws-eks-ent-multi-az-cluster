@@ -8,6 +8,7 @@ spec:
   policyTypes:
   - Ingress
   - Egress
+  # Default deny all traffic
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy

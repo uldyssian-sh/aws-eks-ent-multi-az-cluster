@@ -89,9 +89,15 @@ resource "aws_cloudwatch_log_group" "eks" {
   tags              = var.tags
 }
 
+resource "aws_kms_key" "sns" {
+  description = "KMS key for SNS topic encryption"
+  tags        = var.tags
+}
+
 resource "aws_sns_topic" "alerts" {
-  name = "${var.cluster_name}-alerts"
-  tags = var.tags
+  name              = "${var.cluster_name}-alerts"
+  kms_master_key_id = aws_kms_key.sns.arn
+  tags              = var.tags
 }
 
 resource "aws_cloudwatch_log_metric_filter" "error_count" {
