@@ -7,11 +7,12 @@ resource "aws_eks_cluster" "main" {
     subnet_ids              = var.subnet_ids
     endpoint_private_access = var.endpoint_private_access
     endpoint_public_access  = var.endpoint_public_access
-    public_access_cidrs     = var.endpoint_public_access_cidrs
+    public_access_cidrs     = var.endpoint_public_access ? var.endpoint_public_access_cidrs : []
+    security_group_ids      = var.cluster_security_group_ids
   }
 
   dynamic "encryption_config" {
-    for_each = var.cluster_encryption_config
+    for_each = var.cluster_encryption_config != null ? var.cluster_encryption_config : []
     content {
       provider {
         key_arn = encryption_config.value.provider_key_arn
@@ -19,6 +20,8 @@ resource "aws_eks_cluster" "main" {
       resources = encryption_config.value.resources
     }
   }
+
+  enabled_cluster_log_types = var.cluster_log_types
 
   depends_on = [
     aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy,

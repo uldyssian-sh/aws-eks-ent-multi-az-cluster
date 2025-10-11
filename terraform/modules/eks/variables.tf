@@ -70,6 +70,18 @@ variable "cluster_encryption_config" {
   default = []
 }
 
+variable "cluster_security_group_ids" {
+  description = "List of security group IDs for the EKS cluster"
+  type        = list(string)
+  default     = []
+}
+
+variable "cluster_log_types" {
+  description = "List of control plane logging to enable"
+  type        = list(string)
+  default     = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
+}
+
 variable "tags" {
   description = "A map of tags to assign to the resource"
   type        = map(string)

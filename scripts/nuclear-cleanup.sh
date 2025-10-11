@@ -15,44 +15,66 @@ echo "💥 Starting nuclear cleanup..."
 
 # Delete ALL EKS clusters
 echo "🎯 Deleting ALL EKS clusters..."
-aws eks list-clusters --query 'clusters[]' --output text 2>/dev/null | while read cluster; do
-    echo "  💥 Nuking cluster: $cluster"
-    aws eks delete-nodegroup --cluster-name "$cluster" --nodegroup-name "$(aws eks list-nodegroups --cluster-name "$cluster" --query 'nodegroups[0]' --output text)" >/dev/null 2>&1 || true
-    sleep 30
-    aws eks delete-cluster --name "$cluster" >/dev/null 2>&1 || true
+aws eks list-clusters --query 'clusters[]' --output text 2>/dev/null | while read -r cluster; do
+    if [[ -n "$cluster" ]]; then
+        echo "  💥 Nuking cluster: $cluster"
+        # Get and delete nodegroups first
+        aws eks list-nodegroups --cluster-name "$cluster" --query 'nodegroups[]' --output text 2>/dev/null | while read -r nodegroup; do
+            if [[ -n "$nodegroup" ]]; then
+                aws eks delete-nodegroup --cluster-name "$cluster" --nodegroup-name "$nodegroup" >/dev/null 2>&1 || true
+            fi
+        done
+        sleep 30
+        aws eks delete-cluster --name "$cluster" >/dev/null 2>&1 || true
+    fi
 done
 
 # Delete ALL VPCs (except default)
 echo "🌐 Deleting ALL VPCs..."
-aws ec2 describe-vpcs --query 'Vpcs[?IsDefault==`false`].VpcId' --output text 2>/dev/null | while read vpc; do
-    echo "  💥 Nuking VPC: $vpc"
-    # Delete subnets
-    aws ec2 describe-subnets --filters "Name=vpc-id,Values=$vpc" --query 'Subnets[].SubnetId' --output text | while read subnet; do
-        aws ec2 delete-subnet --subnet-id "$subnet" >/dev/null 2>&1 || true
-    done
+aws ec2 describe-vpcs --query 'Vpcs[?IsDefault==`false`].VpcId' --output text 2>/dev/null | while read -r vpc; do
+    if [[ -n "$vpc" ]]; then
+        echo "  💥 Nuking VPC: $vpc"
+        # Delete subnets
+        aws ec2 describe-subnets --filters "Name=vpc-id,Values=$vpc" --query 'Subnets[].SubnetId' --output text | while read -r subnet; do
+            if [[ -n "$subnet" ]]; then
+                aws ec2 delete-subnet --subnet-id "$subnet" >/dev/null 2>&1 || true
+            fi
+        done
     # Delete internet gateways
-    aws ec2 describe-internet-gateways --filters "Name=attachment.vpc-id,Values=$vpc" --query 'InternetGateways[].InternetGatewayId' --output text | while read igw; do
-        aws ec2 detach-internet-gateway --internet-gateway-id "$igw" --vpc-id "$vpc" >/dev/null 2>&1 || true
-        aws ec2 delete-internet-gateway --internet-gateway-id "$igw" >/dev/null 2>&1 || true
-    done
+        # Delete internet gateways
+        aws ec2 describe-internet-gateways --filters "Name=attachment.vpc-id,Values=$vpc" --query 'InternetGateways[].InternetGatewayId' --output text | while read -r igw; do
+            if [[ -n "$igw" ]]; then
+                aws ec2 detach-internet-gateway --internet-gateway-id "$igw" --vpc-id "$vpc" >/dev/null 2>&1 || true
+                aws ec2 delete-internet-gateway --internet-gateway-id "$igw" >/dev/null 2>&1 || true
+            fi
+        done
     # Delete route tables
-    aws ec2 describe-route-tables --filters "Name=vpc-id,Values=$vpc" --query 'RouteTables[?Associations[0].Main!=`true`].RouteTableId' --output text | while read rt; do
-        aws ec2 delete-route-table --route-table-id "$rt" >/dev/null 2>&1 || true
-    done
+        # Delete route tables
+        aws ec2 describe-route-tables --filters "Name=vpc-id,Values=$vpc" --query 'RouteTables[?Associations[0].Main!=`true`].RouteTableId' --output text | while read -r rt; do
+            if [[ -n "$rt" ]]; then
+                aws ec2 delete-route-table --route-table-id "$rt" >/dev/null 2>&1 || true
+            fi
+        done
     # Delete security groups
-    aws ec2 describe-security-groups --filters "Name=vpc-id,Values=$vpc" --query 'SecurityGroups[?GroupName!=`default`].GroupId' --output text | while read sg; do
-        aws ec2 delete-security-group --group-id "$sg" >/dev/null 2>&1 || true
-    done
-    # Delete VPC
-    aws ec2 delete-vpc --vpc-id "$vpc" >/dev/null 2>&1 || true
+        # Delete security groups
+        aws ec2 describe-security-groups --filters "Name=vpc-id,Values=$vpc" --query 'SecurityGroups[?GroupName!=`default`].GroupId' --output text | while read -r sg; do
+            if [[ -n "$sg" ]]; then
+                aws ec2 delete-security-group --group-id "$sg" >/dev/null 2>&1 || true
+            fi
+        done
+        # Delete VPC
+        aws ec2 delete-vpc --vpc-id "$vpc" >/dev/null 2>&1 || true
+    fi
 done
 
 # Delete ALL S3 buckets
 echo "🪣 Deleting ALL S3 buckets..."
-aws s3api list-buckets --query 'Buckets[].Name' --output text 2>/dev/null | while read bucket; do
-    echo "  💥 Nuking bucket: $bucket"
-    aws s3 rm "s3://$bucket" --recursive >/dev/null 2>&1 || true
-    aws s3api delete-bucket --bucket "$bucket" >/dev/null 2>&1 || true
+aws s3api list-buckets --query 'Buckets[].Name' --output text 2>/dev/null | while read -r bucket; do
+    if [[ -n "$bucket" ]]; then
+        echo "  💥 Nuking bucket: $bucket"
+        aws s3 rm "s3://$bucket" --recursive >/dev/null 2>&1 || true
+        aws s3api delete-bucket --bucket "$bucket" >/dev/null 2>&1 || true
+    fi
 done
 
 # Delete ALL IAM roles (except AWS service roles)
