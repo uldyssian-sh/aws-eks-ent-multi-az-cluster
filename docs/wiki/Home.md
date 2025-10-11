@@ -1,6 +1,6 @@
-# AWS Enterprise EKS Multi-AZ Cluster Wiki
+# AWS AWS EKS Enterprise Multi-AZ Cluster Wiki
 
-Welcome to the comprehensive documentation for the **AWS Enterprise EKS Multi-AZ Cluster** - a production-ready Kubernetes platform designed for mission-critical workloads.
+Welcome to the comprehensive documentation for the **AWS AWS EKS Enterprise Multi-AZ Cluster** - a production-ready Kubernetes platform designed for mission-critical workloads.
 
 ## 🎯 Project Overview
 
@@ -141,19 +141,19 @@ This project provides a **Fortune 500-grade Kubernetes platform** with:
 ## 🤝 Community & Support
 
 ### 📞 Getting Help
-- **[GitHub Issues](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues)** - Bug reports and feature requests
-- **[GitHub Discussions](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/discussions)** - Community discussions
-- **[Security Policy](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/security/policy)** - Security vulnerability reporting
+- **[GitHub Issues](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/issues)** - Bug reports and feature requests
+- **[GitHub Discussions](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/discussions)** - Community discussions
+- **[Security Policy](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/security/policy)** - Security vulnerability reporting
 
 ### 🤝 Contributing
-- **[Contributing Guide](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/blob/main/.github/CONTRIBUTING.md)** - How to contribute
-- **[Code of Conduct](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/blob/main/CODE_OF_CONDUCT.md)** - Community guidelines
-- **[Pull Request Template](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/blob/main/.github/pull_request_template.md)** - PR guidelines
+- **[Contributing Guide](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/blob/main/.github/CONTRIBUTING.md)** - How to contribute
+- **[Code of Conduct](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/blob/main/CODE_OF_CONDUCT.md)** - Community guidelines
+- **[Pull Request Template](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/blob/main/.github/pull_request_template.md)** - PR guidelines
 
 ### 📈 Project Health
-- **[Changelog](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/blob/main/CHANGELOG.md)** - Version history
-- **[Roadmap](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/blob/main/docs/ROADMAP.md)** - Future plans
-- **[License](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/blob/main/LICENSE)** - MIT License
+- **[Changelog](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/blob/main/CHANGELOG.md)** - Version history
+- **[Roadmap](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/blob/main/docs/ROADMAP.md)** - Future plans
+- **[License](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/blob/main/LICENSE)** - MIT License
 
 ---
 
@@ -163,6 +163,6 @@ This project provides a **Fortune 500-grade Kubernetes platform** with:
 
 **Author:** LT (uldyssian-sh)
 
-[⭐ Star this repo](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster) • [🍴 Fork it](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/fork) • [🚀 Deploy Now](Quick-Start-Guide)
+[⭐ Star this repo](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster) • [🍴 Fork it](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/fork) • [🚀 Deploy Now](Quick-Start-Guide)
 
 </div>

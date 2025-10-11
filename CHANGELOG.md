@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial enterprise EKS multi-AZ cluster implementation
+- Initial AWS EKS Enterprise multi-AZ cluster implementation
 - Zero-touch deployment automation
 - Enterprise security and compliance features
 - Multi-region disaster recovery

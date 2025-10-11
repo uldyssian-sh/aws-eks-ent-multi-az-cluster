@@ -33,7 +33,7 @@ To protect the main branch, configure these settings in GitHub:
 
 ```bash
 # Using GitHub CLI
-gh api repos/uldyssian-sh/aws-ent-eks-multi-az-cluster/branches/main/protection \
+gh api repos/uldyssian-sh/aws-eks-ent-multi-az-cluster/branches/main/protection \
   --method PUT \
   --field required_status_checks='{"strict":true,"contexts":["Security Scan","Terraform Validation","Kubernetes Validation"]}' \
   --field enforce_admins=true \

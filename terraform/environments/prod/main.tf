@@ -15,18 +15,18 @@ provider "aws" {
   default_tags {
     tags = {
       Environment = "prod"
-      Project     = "eks-multi-az-cluster"
+      Project     = "aws-eks-ent-multi-az-cluster"
       ManagedBy   = "terraform"
     }
   }
 }
 
 locals {
-  cluster_name = "eks-multi-az-cluster-prod"
+  cluster_name = "aws-eks-ent-multi-az-cluster-prod"
   
   common_tags = {
     Environment = "prod"
-    Project     = "eks-multi-az-cluster"
+    Project     = "aws-eks-ent-multi-az-cluster"
     ManagedBy   = "terraform"
   }
 }

@@ -1,11 +1,14 @@
 #!/bin/bash
+# Enterprise EKS deployment script
+# Deploys complete EKS infrastructure with security and monitoring
 
-set -e
+set -euo pipefail
 
 # Check required tools
 for tool in terraform aws kubectl; do
   if ! command -v "$tool" >/dev/null 2>&1; then
     echo "❌ Required tool not found: $tool"
+    echo "Please install $tool and try again"
     exit 1
   fi
 done
@@ -19,20 +22,41 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 echo "🚀 Deploying enterprise EKS: $ENV"
 
 # Deploy infrastructure
-if [ ! -d "$PROJECT_ROOT/terraform/environments/$ENV" ]; then
+if [[ ! -d "$PROJECT_ROOT/terraform/environments/$ENV" ]]; then
   echo "❌ Environment directory not found: $PROJECT_ROOT/terraform/environments/$ENV"
+  echo "Available environments:"
+  ls -1 "$PROJECT_ROOT/terraform/environments/" 2>/dev/null || echo "No environments found"
   exit 1
 fi
+
 cd "$PROJECT_ROOT/terraform/environments/$ENV"
-terraform init
-terraform plan -out=tfplan
-terraform apply -auto-approve tfplan
+echo "📋 Initializing Terraform..."
+terraform init || { echo "❌ Terraform init failed"; exit 1; }
+
+echo "📋 Planning Terraform deployment..."
+terraform plan -out=tfplan || { echo "❌ Terraform plan failed"; exit 1; }
+
+echo "🚀 Applying Terraform configuration..."
+terraform apply -auto-approve tfplan || { echo "❌ Terraform apply failed"; exit 1; }
 
 # Configure kubectl
-aws eks --region "$REGION" update-kubeconfig --name "eks-multi-az-cluster-$ENV"
+echo "⚙️ Configuring kubectl..."
+aws eks --region "$REGION" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-$ENV" || {
+  echo "❌ Failed to configure kubectl"
+  exit 1
+}
+
+# Verify cluster connectivity
+echo "🔍 Verifying cluster connectivity..."
+kubectl cluster-info || { echo "❌ Cannot connect to cluster"; exit 1; }
 
 # Wait for nodes
-kubectl wait --for=condition=Ready nodes --all --timeout=300s
+echo "⏳ Waiting for nodes to be ready..."
+kubectl wait --for=condition=Ready nodes --all --timeout=300s || {
+  echo "❌ Nodes failed to become ready"
+  kubectl get nodes
+  exit 1
+}
 
 # Deploy security stack
 cd "$PROJECT_ROOT"

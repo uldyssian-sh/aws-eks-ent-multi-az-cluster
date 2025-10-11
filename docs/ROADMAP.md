@@ -116,8 +116,8 @@
 
 We welcome feedback and suggestions for future releases:
 
-- **GitHub Issues** - [Feature requests and bug reports](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/issues)
-- **Discussions** - [Community discussions](https://github.com/uldyssian-sh/aws-ent-eks-multi-az-cluster/discussions)
+- **GitHub Issues** - [Feature requests and bug reports](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/issues)
+- **Discussions** - [Community discussions](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/discussions)
 - **Email** - roadmap@company.com
 
 ## Release Schedule

@@ -83,6 +83,17 @@ resource "aws_cloudwatch_metric_alarm" "pod_restart_high" {
   tags = var.tags
 }
 
+resource "aws_cloudwatch_log_group" "eks" {
+  name              = "/aws/eks/${var.cluster_name}/cluster"
+  retention_in_days = var.log_retention_days
+  tags              = var.tags
+}
+
+resource "aws_sns_topic" "alerts" {
+  name = "${var.cluster_name}-alerts"
+  tags = var.tags
+}
+
 resource "aws_cloudwatch_log_metric_filter" "error_count" {
   name           = "${var.cluster_name}-error-count"
   log_group_name = aws_cloudwatch_log_group.eks.name
@@ -93,4 +104,6 @@ resource "aws_cloudwatch_log_metric_filter" "error_count" {
     namespace = "EKS/Logs"
     value     = "1"
   }
+
+  depends_on = [aws_cloudwatch_log_group.eks]
 }
