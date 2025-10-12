@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches: [main, master]
@@ -8,6 +9,7 @@ on:
 permissions:
   contents: read
   security-events: write
+  actions: read
 
 jobs:
   test:
