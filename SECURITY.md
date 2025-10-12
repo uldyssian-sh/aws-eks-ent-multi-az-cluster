@@ -2,12 +2,12 @@
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x.x   | :white_check_mark: |
+We support security updates for the latest version of this project.
 
 ## Reporting a Vulnerability
 
-Please report security vulnerabilities to: security@uldyssian-sh.com
+Please report security vulnerabilities by creating an issue or contacting the maintainers directly.
 
-We will respond within 48 hours and provide updates every 72 hours until resolved.
+## Dependency Management
+
+This project uses automated dependency scanning with Trivy. Known false positives and low-risk vulnerabilities are documented in `.trivyignore`.
