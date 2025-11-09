@@ -1,7 +1,0 @@
-name: Success
-on: [workflow_dispatch, push]
-jobs:
-  success:
-    runs-on: ubuntu-latest
-    steps:
-    - run: echo "✅ Success"
