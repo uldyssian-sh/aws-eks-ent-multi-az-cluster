@@ -21,4 +21,3 @@ output "node_group_security_group_id" {
 output "additional_iam_policy_arn" {
   description = "ARN of the additional IAM policy"
   value       = aws_iam_policy.node_group_additional.arn
-}# Updated 20251109_123803

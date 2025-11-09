@@ -78,7 +78,6 @@
 - [ ] Enhanced developer experience
 
 #### Breaking Changes
-- [ ] Updated Kubernetes version (1.30+)
 - [ ] New Terraform provider versions
 - [ ] Enhanced security requirements
 - [ ] Improved API design

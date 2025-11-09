@@ -125,4 +125,3 @@ module "cost_optimization" {
   spot_max_size     = 20
   spot_min_size     = 2
   tags              = local.common_tags
-}# Updated 20251109_123803

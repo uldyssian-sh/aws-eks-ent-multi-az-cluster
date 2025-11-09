@@ -77,4 +77,3 @@ module "monitoring" {
   alert_emails      = var.alert_emails
   
   tags = local.common_tags
-}# Updated 20251109_123803
