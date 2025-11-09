@@ -52,4 +52,4 @@ kubectl apply -f k8s/service-mesh/ || { echo "❌ Service mesh deployment failed
 
 echo "✅ Production enterprise stack deployed"
 echo "📊 Resources: 2x dev environment"
-echo "🔗 Access: kubectl port-forward -n monitoring svc/grafana 3000:3000"
+echo "🔗 Access: kubectl port-forward -n monitoring svc/grafana 3000:3000"# Updated Sun Nov  9 12:50:06 CET 2025

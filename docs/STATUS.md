@@ -25,4 +25,4 @@ kubectl port-forward -n monitoring svc/grafana 3000:3000
 ## 🧹 Cleanup
 ```bash
 ./scripts/cleanup.sh dev
-```
+```# Updated Sun Nov  9 12:50:06 CET 2025

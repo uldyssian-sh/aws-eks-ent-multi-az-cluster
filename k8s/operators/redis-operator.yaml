@@ -25,4 +25,4 @@ spec:
             cpu: "50m"
           limits:
             memory: "256Mi"
-            cpu: "200m"
+            cpu: "200m"# Updated Sun Nov  9 12:50:05 CET 2025

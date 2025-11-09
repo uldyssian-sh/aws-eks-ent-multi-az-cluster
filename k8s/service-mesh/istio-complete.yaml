@@ -60,4 +60,4 @@ spec:
       mode: SIMPLE
       credentialName: istio-gateway-cert
     hosts:
-    - "*"
+    - "*"# Updated Sun Nov  9 12:50:06 CET 2025

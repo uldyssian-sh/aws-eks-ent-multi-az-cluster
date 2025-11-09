@@ -21,4 +21,4 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          kubernetes.io/metadata.name: default
+          kubernetes.io/metadata.name: default# Updated Sun Nov  9 12:50:05 CET 2025

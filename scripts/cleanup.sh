@@ -74,4 +74,4 @@ if [ "$REMAINING_VPCS" -eq 0 ]; then
   echo "✅ Complete cleanup verified"
 else
   echo "⚠️ $REMAINING_VPCS VPCs may need manual cleanup"
-fi
+fi# Updated Sun Nov  9 12:50:06 CET 2025

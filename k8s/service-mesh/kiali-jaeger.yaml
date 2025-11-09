@@ -106,4 +106,4 @@ spec:
   ports:
   - name: http
     port: 16686
-    targetPort: 16686
+    targetPort: 16686# Updated Sun Nov  9 12:50:06 CET 2025

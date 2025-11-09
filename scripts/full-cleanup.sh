@@ -13,4 +13,4 @@ ENVIRONMENT=${EKS_ENVIRONMENT:-dev}
 # Destroy infrastructure
 ./scripts/destroy.sh $ENVIRONMENT
 
-echo "✅ Full cleanup completed!"
+echo "✅ Full cleanup completed!"# Updated Sun Nov  9 12:50:06 CET 2025

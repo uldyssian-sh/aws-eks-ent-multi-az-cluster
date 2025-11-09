@@ -42,4 +42,4 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 60
+        averageUtilization: 60# Updated Sun Nov  9 12:50:06 CET 2025

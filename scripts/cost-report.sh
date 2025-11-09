@@ -52,4 +52,4 @@ else
     echo "📊 Estimated monthly savings: 0% (no spot instances)"
 fi
 
-echo "✅ Cost report completed!"
+echo "✅ Cost report completed!"# Updated Sun Nov  9 12:50:06 CET 2025

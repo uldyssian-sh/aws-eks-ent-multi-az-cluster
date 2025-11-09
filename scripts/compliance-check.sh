@@ -60,4 +60,4 @@ if [ $COMPLIANCE_SCORE -ge 90 ]; then
     echo "✅ Compliance check passed!"
 else
     echo "⚠️ Compliance improvements needed"
-fi
+fi# Updated Sun Nov  9 12:50:06 CET 2025

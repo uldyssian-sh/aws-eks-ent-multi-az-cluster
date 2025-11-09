@@ -99,4 +99,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: argocd-server
+    app: argocd-server# Updated Sun Nov  9 12:50:06 CET 2025

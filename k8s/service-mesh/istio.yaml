@@ -57,4 +57,4 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
         ports:
-        - containerPort: 15010
+        - containerPort: 15010# Updated Sun Nov  9 12:50:06 CET 2025

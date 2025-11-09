@@ -40,4 +40,4 @@ spec:
   match:
     kinds:
       - apiGroups: ["rbac.authorization.k8s.io"]
-        kinds: ["Role", "ClusterRole"]
+        kinds: ["Role", "ClusterRole"]# Updated Sun Nov  9 12:50:06 CET 2025

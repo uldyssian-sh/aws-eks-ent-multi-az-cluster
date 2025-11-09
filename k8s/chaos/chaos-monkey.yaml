@@ -93,4 +93,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: chaos-monkey
-  namespace: chaos-engineering
+  namespace: chaos-engineering# Updated Sun Nov  9 12:50:06 CET 2025

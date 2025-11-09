@@ -87,4 +87,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: falco
-  namespace: falco
+  namespace: falco# Updated Sun Nov  9 12:50:05 CET 2025

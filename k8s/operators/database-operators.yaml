@@ -35,4 +35,4 @@ spec:
           capabilities:
             drop:
             - ALL
-          readOnlyRootFilesystem: true
+          readOnlyRootFilesystem: true# Updated Sun Nov  9 12:50:05 CET 2025

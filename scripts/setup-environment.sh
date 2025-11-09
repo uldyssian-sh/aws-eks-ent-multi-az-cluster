@@ -36,4 +36,4 @@ aws_region = "$AWS_REGION"
 EOF
 fi
 
-echo "✅ Environment setup complete"
+echo "✅ Environment setup complete"# Updated Sun Nov  9 12:50:06 CET 2025

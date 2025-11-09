@@ -61,4 +61,4 @@ spec:
           name: prometheus-config
       - name: storage
         persistentVolumeClaim:
-          claimName: prometheus-storage
+          claimName: prometheus-storage# Updated Sun Nov  9 12:50:06 CET 2025

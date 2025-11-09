@@ -48,4 +48,4 @@ kubectl apply -f k8s/chaos/ || { echo "❌ Chaos engineering deployment failed";
 echo "✅ Complete enterprise stack deployed: $ENV"
 echo "🔗 Access points:"
 echo "  Grafana: kubectl port-forward -n monitoring svc/grafana 3000:3000"
-echo "  ArgoCD: kubectl port-forward -n argocd svc/argocd-server 8080:80"
+echo "  ArgoCD: kubectl port-forward -n argocd svc/argocd-server 8080:80"# Updated Sun Nov  9 12:50:06 CET 2025

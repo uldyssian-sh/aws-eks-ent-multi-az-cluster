@@ -71,4 +71,4 @@ kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment failed"; e
 echo "📜 Applying policies..."
 kubectl apply -f k8s/policies/ || echo "⚠️ Some policies may have failed (non-critical)"
 
-echo "✅ Enterprise EKS deployed: $ENV"
+echo "✅ Enterprise EKS deployed: $ENV"# Updated Sun Nov  9 12:50:06 CET 2025

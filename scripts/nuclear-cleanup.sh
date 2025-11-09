@@ -177,4 +177,4 @@ echo "  - ALL CloudWatch logs"
 echo "  - ALL local terraform state"
 echo ""
 echo "💰 AWS account is now COMPLETELY CLEAN!"
-echo "🔥 Total destruction achieved!"
+echo "🔥 Total destruction achieved!"# Updated Sun Nov  9 12:50:06 CET 2025

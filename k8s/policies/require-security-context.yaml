@@ -35,4 +35,4 @@ spec:
   match:
     kinds:
       - apiGroups: ["apps"]
-        kinds: ["Deployment"]
+        kinds: ["Deployment"]# Updated Sun Nov  9 12:50:06 CET 2025

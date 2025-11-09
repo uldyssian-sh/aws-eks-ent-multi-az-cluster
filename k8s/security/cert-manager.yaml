@@ -45,4 +45,4 @@ spec:
     kind: ClusterIssuer
   dnsNames:
   - "*.company.com"
-  - "company.com"
+  - "company.com"# Updated Sun Nov  9 12:50:06 CET 2025

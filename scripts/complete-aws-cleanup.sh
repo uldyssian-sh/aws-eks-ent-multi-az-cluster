@@ -113,4 +113,4 @@ echo "  - KMS keys (scheduled for deletion)"
 echo "  - Local terraform state files"
 echo ""
 echo "💰 AWS bill should be $0 now!"
-echo "📦 Project code remains intact for future deployments"
+echo "📦 Project code remains intact for future deployments"# Updated Sun Nov  9 12:50:06 CET 2025

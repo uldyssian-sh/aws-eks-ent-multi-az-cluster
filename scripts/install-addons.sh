@@ -33,4 +33,4 @@ kubectl patch deployment cluster-autoscaler -n kube-system -p '{"spec":{"templat
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml >/dev/null 2>&1
 
 # Cleanup
-rm -f v2_4_7_full.yaml v2_4_7_full.yaml.bak
+rm -f v2_4_7_full.yaml v2_4_7_full.yaml.bak# Updated Sun Nov  9 12:50:06 CET 2025

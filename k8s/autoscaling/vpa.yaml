@@ -62,4 +62,4 @@ spec:
         memory: 2Gi
       minAllowed:
         cpu: 50m
-        memory: 128Mi
+        memory: 128Mi# Updated Sun Nov  9 12:50:06 CET 2025

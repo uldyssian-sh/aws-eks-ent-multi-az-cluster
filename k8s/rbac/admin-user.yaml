@@ -27,4 +27,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: admin-user
-  namespace: kube-system
+  namespace: kube-system# Updated Sun Nov  9 12:50:05 CET 2025

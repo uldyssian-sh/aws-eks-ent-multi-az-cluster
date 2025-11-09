@@ -41,4 +41,4 @@ echo "⏳ Waiting for rollouts to complete..."
 kubectl rollout status deployment/prometheus -n monitoring --timeout=300s || true
 kubectl rollout status deployment/grafana -n monitoring --timeout=300s || true
 
-echo "✅ Cluster update completed for: $ENV"
+echo "✅ Cluster update completed for: $ENV"# Updated Sun Nov  9 12:50:06 CET 2025

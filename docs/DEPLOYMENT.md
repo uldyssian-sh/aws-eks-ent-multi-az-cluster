@@ -32,4 +32,4 @@ aws eks update-kubeconfig --region us-west-2 --name aws-eks-ent-multi-az-cluster
 ## Cleanup
 ```bash
 ./scripts/cleanup.sh dev
-```
+```# Updated Sun Nov  9 12:50:06 CET 2025

@@ -145,4 +145,4 @@ main() {
     log "Results available in: ${SCAN_RESULTS}/"
 }
 
-main "$@"
+main "$@"# Updated Sun Nov  9 12:50:06 CET 2025

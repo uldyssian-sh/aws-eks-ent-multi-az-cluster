@@ -53,4 +53,4 @@ spec:
       labels:
         severity: critical
       annotations:
-        summary: "Node {{ $labels.node }} is not ready"
+        summary: "Node {{ $labels.node }} is not ready"# Updated Sun Nov  9 12:50:06 CET 2025

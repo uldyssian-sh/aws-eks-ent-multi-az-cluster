@@ -17,4 +17,4 @@ AWS_REGION=${EKS_AWS_REGION:-us-west-2}
 # Validate deployment
 ./scripts/validate-cluster.sh
 
-echo "🎉 Full deployment completed successfully!"
+echo "🎉 Full deployment completed successfully!"# Updated Sun Nov  9 12:50:06 CET 2025

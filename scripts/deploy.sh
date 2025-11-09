@@ -12,4 +12,4 @@ terraform apply -input=false -auto-approve >/dev/null 2>&1
 CLUSTER_NAME=$(terraform output -raw cluster_name 2>/dev/null)
 aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME >/dev/null 2>&1
 kubectl wait --for=condition=Ready nodes --all --timeout=300s >/dev/null 2>&1
-echo "✅ $CLUSTER_NAME ready"
+echo "✅ $CLUSTER_NAME ready"# Updated Sun Nov  9 12:50:06 CET 2025

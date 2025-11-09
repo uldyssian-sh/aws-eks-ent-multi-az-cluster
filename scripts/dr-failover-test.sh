@@ -40,4 +40,4 @@ echo "  Recovery Time: ${RTO}s"
 echo "  Target RTO: <300s"
 echo "  Status: $([ $RTO -lt 300 ] && echo "✅ PASS" || echo "⚠️ REVIEW")"
 
-echo "✅ DR failover test completed!"
+echo "✅ DR failover test completed!"# Updated Sun Nov  9 12:50:06 CET 2025

@@ -86,4 +86,4 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: gatekeeper-admin
-  namespace: gatekeeper-system
+  namespace: gatekeeper-system# Updated Sun Nov  9 12:50:05 CET 2025
