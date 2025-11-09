@@ -11,4 +11,4 @@ output "autoscaling_group_arn" {
 output "launch_template_id" {
   description = "ID of the launch template"
   value       = try(aws_launch_template.spot_nodes.id, null)
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

@@ -75,3 +75,4 @@ echo ""
 echo "📊 Cluster status:"
 kubectl get nodes
 kubectl get pods -A --field-selector=status.phase!=Running | grep -v "Completed" || echo "✅ All pods running"# Updated Sun Nov  9 12:50:06 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

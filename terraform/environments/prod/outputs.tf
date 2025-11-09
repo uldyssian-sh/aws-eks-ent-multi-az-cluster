@@ -11,4 +11,4 @@ output "cluster_endpoint" {
 output "cluster_security_group_id" {
   description = "Security group id attached to the cluster control plane"
   value       = try(module.eks.cluster_security_group_id, null)
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

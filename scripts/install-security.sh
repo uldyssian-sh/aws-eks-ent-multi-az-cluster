@@ -21,3 +21,4 @@ kubectl wait --for=condition=available --timeout=300s deployment/gatekeeper-cont
 kubectl apply -f k8s/policies/ >/dev/null 2>&1 || true
 
 echo "✅ Security stack installed"# Updated Sun Nov  9 12:50:06 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

@@ -52,4 +52,4 @@ clean: ## Clean temporary files
 	@echo "🧹 Cleaning temporary files..."
 	@find . -name "*.log" -delete
 	@find . -name ".terraform" -type d -exec rm -rf {} +
-	@find . -name "terraform.tfstate*" -delete
+	@find . -name "terraform.tfstate*" -delete# Updated Sun Nov  9 12:52:18 CET 2025

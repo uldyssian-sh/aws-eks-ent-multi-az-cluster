@@ -49,3 +49,4 @@ kubectl wait --for=condition=completed pod/storage-test --timeout=60s 2>/dev/nul
 kubectl delete pod storage-test --ignore-not-found
 
 echo "✅ Benchmark completed"# Updated Sun Nov  9 12:50:06 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

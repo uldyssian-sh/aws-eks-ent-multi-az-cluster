@@ -28,3 +28,4 @@ roleRef:
   kind: ClusterRole
   name: monitoring-reader
   apiGroup: rbac.authorization.k8s.io# Updated Sun Nov  9 12:50:06 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

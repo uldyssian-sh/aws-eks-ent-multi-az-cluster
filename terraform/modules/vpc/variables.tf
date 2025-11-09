@@ -53,4 +53,4 @@ variable "tags" {
   description = "A map of tags to assign to the resource"
   type        = map(string)
   default     = {}
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

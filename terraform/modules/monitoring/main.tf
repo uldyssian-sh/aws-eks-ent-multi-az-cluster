@@ -17,4 +17,4 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   }
 
   tags = var.tags
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

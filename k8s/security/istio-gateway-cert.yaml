@@ -14,3 +14,4 @@ data:
   tls.key: |
     # This will be populated by cert-manager
     # Private key will be generated automatically# Updated Sun Nov  9 12:50:05 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

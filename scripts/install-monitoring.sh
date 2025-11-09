@@ -17,3 +17,4 @@ aws logs create-log-group --log-group-name /aws/containerinsights/$1/host >/dev/
 aws logs create-log-group --log-group-name /aws/containerinsights/$1/dataplane >/dev/null 2>&1 || true
 
 echo "✅ Monitoring stack installed"# Updated Sun Nov  9 12:50:06 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

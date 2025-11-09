@@ -104,3 +104,4 @@ echo "  Security groups:"
 aws ec2 describe-security-groups --region $REGION --query 'SecurityGroups[?GroupName!=`default`].GroupId' --output text || echo "    None"
 
 echo "✅ Force deletion completed!"# Updated Sun Nov  9 12:50:06 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

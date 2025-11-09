@@ -8,4 +8,4 @@ resource "aws_cloudwatch_log_group" "eks" {
   retention_in_days = var.log_retention_days
   kms_key_id        = var.kms_key_arn
   tags              = var.tags
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

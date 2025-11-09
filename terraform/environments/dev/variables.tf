@@ -143,4 +143,4 @@ variable "tags" {
   description = "Tags to apply to resources"
   type        = map(string)
   default     = {}
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

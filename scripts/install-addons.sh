@@ -34,3 +34,4 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 
 # Cleanup
 rm -f v2_4_7_full.yaml v2_4_7_full.yaml.bak# Updated Sun Nov  9 12:50:06 CET 2025
+# Updated Sun Nov  9 12:52:18 CET 2025

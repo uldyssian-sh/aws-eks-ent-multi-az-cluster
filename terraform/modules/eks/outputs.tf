@@ -36,4 +36,4 @@ output "cluster_oidc_issuer_url" {
 output "node_groups" {
   description = "EKS node groups"
   value       = aws_eks_node_group.main
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

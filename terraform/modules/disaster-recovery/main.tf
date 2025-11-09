@@ -25,4 +25,4 @@ resource "aws_backup_plan" "cross_region" {
   tags = var.tags
 }
 
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current" {}# Updated Sun Nov  9 12:52:18 CET 2025

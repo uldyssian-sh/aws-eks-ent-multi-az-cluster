@@ -89,4 +89,4 @@ variable "enable_alerts" {
   description = "Enable CloudWatch alerts"
   type        = bool
   default     = true
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025

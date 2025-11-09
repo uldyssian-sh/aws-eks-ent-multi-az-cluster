@@ -12,4 +12,4 @@ variable "tags" {
   description = "Resource tags"
   type        = map(string)
   default     = {}
-}
+}# Updated Sun Nov  9 12:52:18 CET 2025
