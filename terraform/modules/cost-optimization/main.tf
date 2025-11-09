@@ -17,4 +17,4 @@ resource "aws_eks_node_group" "spot" {
   }
 
   tags = var.tags
-}
+}# Updated 20251109_123803
