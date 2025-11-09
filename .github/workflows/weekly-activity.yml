@@ -20,15 +20,15 @@ jobs:
         
       - name: Update weekly activity
         run: |
-          echo "Weekly activity update: $(date +%Y-%m-%d\ %H:%M:%S)" >> .github/weekly-activity.log
-          echo "Repository: ${{ github.repository }}" >> .github/weekly-activity.log
-          echo "Automated maintenance completed" >> .github/weekly-activity.log
-          echo "---" >> .github/weekly-activity.log
+          echo "Weekly activity: $(date)" > weekly-activity.log
+          echo "Weekly activity: $(date)" > weekly-activity.log
+          echo "Weekly activity: $(date)" > weekly-activity.log
+          echo "Weekly activity: $(date)" > weekly-activity.log
           
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .github/weekly-activity.log
+          git add weekly-activity.log
           git diff --staged --quiet || git commit -m "Weekly activity: $(date +%Y-%m-%d)"
           git push
