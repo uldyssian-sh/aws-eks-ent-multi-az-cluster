@@ -3,7 +3,7 @@
 set -e
 
 ENV=${1:-dev}
-echo "🧪 Running complete test suite for: $ENV"
+echo "🧪 Running complete test suite for: "$ENV""
 
 # Prerequisites check
 echo "1️⃣ Prerequisites check..."
@@ -52,23 +52,23 @@ OVERALL_SCORE=$(((SECURITY_SCORE * 40 + PERFORMANCE_SCORE * 30 + BACKUP_SCORE * 
 echo ""
 echo "🏆 ENTERPRISE TEST SUITE RESULTS"
 echo "=================================="
-echo "Environment: $ENV"
-echo "Security Score: $SECURITY_SCORE/100 (40% weight)"
-echo "Performance Score: $PERFORMANCE_SCORE/100 (30% weight)"
-echo "Backup Score: $BACKUP_SCORE/100 (30% weight)"
+echo "Environment: "$ENV""
+echo "Security Score: "$SECURITY_SCORE"/100 (40% weight)"
+echo "Performance Score: "$PERFORMANCE_SCORE"/100 (30% weight)"
+echo "Backup Score: "$BACKUP_SCORE"/100 (30% weight)"
 echo ""
-echo "🎯 OVERALL ENTERPRISE SCORE: $OVERALL_SCORE/100"
+echo "🎯 OVERALL ENTERPRISE SCORE: "$OVERALL_SCORE"/100"
 echo ""
 
-if [ $OVERALL_SCORE -ge 95 ]; then
+if [ "$OVERALL_SCORE" -ge 95 ]; then
     echo "🏆 EXCELLENT - Enterprise grade platform!"
-elif [ $OVERALL_SCORE -ge 85 ]; then
+elif [ "$OVERALL_SCORE" -ge 85 ]; then
     echo "✅ GOOD - Production ready with minor improvements"
-elif [ $OVERALL_SCORE -ge 70 ]; then
+elif [ "$OVERALL_SCORE" -ge 70 ]; then
     echo "⚠️ FAIR - Requires improvements before production"
 else
     echo "❌ POOR - Significant issues need resolution"
 fi
 
 echo ""
-echo "📋 Test suite completed for: $ENV"
+echo "📋 Test suite completed for: "$ENV""

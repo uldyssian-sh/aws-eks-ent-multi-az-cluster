@@ -6,9 +6,9 @@ set -euo pipefail
 
 # Check required tools
 for tool in terraform aws kubectl; do
-  if ! command -v "$tool" >/dev/null 2>&1; then
-    echo "❌ Required tool not found: $tool"
-    echo "Please install $tool and try again"
+  if ! command -v ""$tool"" >/dev/null 2>&1; then
+    echo "❌ Required tool not found: "$tool""
+    echo "Please install "$tool" and try again"
     exit 1
   fi
 done
@@ -17,19 +17,19 @@ ENV=${1:-dev}
 REGION=${2:-us-west-2}
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$(dirname ""$SCRIPT_DIR"")"
 
-echo "🚀 Deploying enterprise EKS: $ENV"
+echo "🚀 Deploying enterprise EKS: "$ENV""
 
 # Deploy infrastructure
-if [[ ! -d "$PROJECT_ROOT/terraform/environments/$ENV" ]]; then
-  echo "❌ Environment directory not found: $PROJECT_ROOT/terraform/environments/$ENV"
+if [[ ! -d ""$PROJECT_ROOT"/terraform/environments/"$ENV"" ]]; then
+  echo "❌ Environment directory not found: "$PROJECT_ROOT"/terraform/environments/"$ENV""
   echo "Available environments:"
-  ls -1 "$PROJECT_ROOT/terraform/environments/" 2>/dev/null || echo "No environments found"
+  ls -1 ""$PROJECT_ROOT"/terraform/environments/" 2>/dev/null || echo "No environments found"
   exit 1
 fi
 
-cd "$PROJECT_ROOT/terraform/environments/$ENV"
+cd ""$PROJECT_ROOT"/terraform/environments/"$ENV""
 echo "📋 Initializing Terraform..."
 terraform init || { echo "❌ Terraform init failed"; exit 1; }
 
@@ -41,7 +41,7 @@ terraform apply -auto-approve tfplan || { echo "❌ Terraform apply failed"; exi
 
 # Configure kubectl
 echo "⚙️ Configuring kubectl..."
-aws eks --region "$REGION" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-$ENV" || {
+aws eks --region ""$REGION"" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-"$ENV"" || {
   echo "❌ Failed to configure kubectl"
   exit 1
 }
@@ -59,7 +59,7 @@ kubectl wait --for=condition=Ready nodes --all --timeout=300s || {
 }
 
 # Deploy security stack
-cd "$PROJECT_ROOT"
+cd ""$PROJECT_ROOT""
 echo "📦 Installing security stack..."
 ./scripts/install-security.sh || { echo "❌ Security installation failed"; exit 1; }
 
@@ -71,4 +71,4 @@ kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment failed"; e
 echo "📜 Applying policies..."
 kubectl apply -f k8s/policies/ || echo "⚠️ Some policies may have failed (non-critical)"
 
-echo "✅ Enterprise EKS deployed: $ENV"
+echo "✅ Enterprise EKS deployed: "$ENV""

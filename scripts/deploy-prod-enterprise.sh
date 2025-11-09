@@ -5,31 +5,31 @@ set -e
 REGION=${AWS_REGION:-us-west-2}
 CLUSTER_NAME=${CLUSTER_NAME:-aws-eks-ent-multi-az-cluster-prod}
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$(dirname ""$SCRIPT_DIR"")"
 
 echo "🚀 Deploying production enterprise stack"
-echo "🌍 Region: $REGION"
-echo "🏢 Cluster: $CLUSTER_NAME"
+echo "🌍 Region: "$REGION""
+echo "🏢 Cluster: "$CLUSTER_NAME""
 
 # Deploy infrastructure
-if [[ ! -d "$PROJECT_ROOT/terraform/environments/prod" ]]; then
+if [[ ! -d ""$PROJECT_ROOT"/terraform/environments/prod" ]]; then
   echo "❌ Production environment not found"
   exit 1
 fi
 
-cd "$PROJECT_ROOT/terraform/environments/prod"
+cd ""$PROJECT_ROOT"/terraform/environments/prod"
 terraform init || { echo "❌ Terraform init failed"; exit 1; }
 terraform plan -out=tfplan || { echo "❌ Terraform plan failed"; exit 1; }
 terraform apply -auto-approve tfplan || { echo "❌ Terraform apply failed"; exit 1; }
 
 # Configure kubectl
-aws eks --region "$REGION" update-kubeconfig --name "$CLUSTER_NAME"
+aws eks --region ""$REGION"" update-kubeconfig --name ""$CLUSTER_NAME""
 
 # Wait for nodes
 kubectl wait --for=condition=Ready nodes --all --timeout=600s
 
 # Deploy production components
-cd "$PROJECT_ROOT"
+cd ""$PROJECT_ROOT""
 
 # Security stack
 echo "📦 Deploying security stack..."

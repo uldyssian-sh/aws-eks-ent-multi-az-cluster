@@ -11,6 +11,6 @@ echo "🗑️ Starting automated cleanup"
 ENVIRONMENT=${EKS_ENVIRONMENT:-dev}
 
 # Destroy infrastructure
-./scripts/destroy.sh $ENVIRONMENT
+./scripts/destroy.sh "$ENVIRONMENT"
 
 echo "✅ Full cleanup completed!"

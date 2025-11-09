@@ -12,7 +12,7 @@ ENVIRONMENT=${EKS_ENVIRONMENT:-dev}
 AWS_REGION=${EKS_AWS_REGION:-us-west-2}
 
 # Deploy infrastructure
-./scripts/deploy.sh $ENVIRONMENT $AWS_REGION
+./scripts/deploy.sh "$ENVIRONMENT" "$AWS_REGION"
 
 # Validate deployment
 ./scripts/validate-cluster.sh

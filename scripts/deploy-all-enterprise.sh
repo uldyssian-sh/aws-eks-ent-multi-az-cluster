@@ -5,24 +5,24 @@ set -e
 ENV=${1:-dev}
 REGION=${2:-us-west-2}
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$(dirname ""$SCRIPT_DIR"")"
 
-echo "🚀 Deploying complete enterprise stack: $ENV"
+echo "🚀 Deploying complete enterprise stack: "$ENV""
 
 # Deploy infrastructure
-cd "$PROJECT_ROOT/terraform/environments/$ENV"
+cd ""$PROJECT_ROOT"/terraform/environments/"$ENV""
 terraform init
 terraform plan -out=tfplan
 terraform apply -auto-approve tfplan
 
 # Configure kubectl
-aws eks --region "$REGION" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-$ENV"
+aws eks --region ""$REGION"" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-"$ENV""
 
 # Wait for nodes
 kubectl wait --for=condition=Ready nodes --all --timeout=600s
 
 # Deploy all components
-cd "$PROJECT_ROOT"
+cd ""$PROJECT_ROOT""
 
 # Security stack
 echo "📦 Deploying security stack..."
@@ -45,7 +45,7 @@ kubectl apply -f k8s/service-mesh/ || { echo "❌ Service mesh deployment failed
 echo "🐒 Deploying chaos engineering..."
 kubectl apply -f k8s/chaos/ || { echo "❌ Chaos engineering deployment failed"; exit 1; }
 
-echo "✅ Complete enterprise stack deployed: $ENV"
+echo "✅ Complete enterprise stack deployed: "$ENV""
 echo "🔗 Access points:"
 echo "  Grafana: kubectl port-forward -n monitoring svc/grafana 3000:3000"
 echo "  ArgoCD: kubectl port-forward -n argocd svc/argocd-server 8080:80"

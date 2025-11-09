@@ -11,4 +11,4 @@ if ! PODS=$(kubectl get pods -n kube-system --no-headers | grep Running | wc -l 
   echo "❌ Failed to get pods"
   exit 1
 fi
-echo "✅ $NODES nodes, $PODS pods"
+echo "✅ "$NODES" nodes, "$PODS" pods"

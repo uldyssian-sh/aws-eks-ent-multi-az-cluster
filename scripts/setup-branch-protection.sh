@@ -6,7 +6,7 @@ echo "🛡️ Setting up branch protection for main branch"
 
 # Create JSON payload
 TEMP_FILE=$(mktemp)
-cat > "$TEMP_FILE" << 'EOF'
+cat > ""$TEMP_FILE"" << 'EOF'
 {
   "required_status_checks": {
     "strict": true,
@@ -32,9 +32,9 @@ EOF
 echo "📋 Applying branch protection rules..."
 if ! gh api repos/uldyssian-sh/aws-eks-ent-multi-az-cluster/branches/main/protection \
   --method PUT \
-  --input "$TEMP_FILE"; then
+  --input ""$TEMP_FILE""; then
   echo "❌ Failed to set branch protection"
-  rm -f "$TEMP_FILE"
+  rm -f ""$TEMP_FILE""
   exit 1
 fi
 
@@ -46,4 +46,4 @@ echo "  - No force pushes"
 echo "  - No deletions"
 
 # Cleanup
-rm -f "$TEMP_FILE"
+rm -f ""$TEMP_FILE""

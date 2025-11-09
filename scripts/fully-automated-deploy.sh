@@ -5,11 +5,11 @@ set -e
 ENV=${1:-dev}
 REGION=${2:-us-west-2}
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$(dirname ""$SCRIPT_DIR"")"
 
 echo "🤖 FULLY AUTOMATED DEPLOYMENT - NO HUMAN INTERACTION"
-echo "🚀 Environment: $ENV"
-echo "🌍 Region: $REGION"
+echo "🚀 Environment: "$ENV""
+echo "🌍 Region: "$REGION""
 echo "⏰ Started: $(date)"
 
 # Pre-flight checks
@@ -25,28 +25,28 @@ echo "✅ All prerequisites met"
 
 # Deploy infrastructure
 echo "🏗️ Deploying infrastructure..."
-cd "$PROJECT_ROOT/terraform/environments/$ENV"
+cd ""$PROJECT_ROOT"/terraform/environments/"$ENV""
 terraform init -input=false
 terraform plan -out=tfplan -input=false
 terraform apply -auto-approve tfplan
 
 # Configure kubectl
 echo "⚙️ Configuring kubectl..."
-aws eks --region "$REGION" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-$ENV"
+aws eks --region ""$REGION"" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-"$ENV""
 
 # Wait for cluster readiness
 echo "⏳ Waiting for cluster readiness..."
 kubectl wait --for=condition=Ready nodes --all --timeout=600s
 
 # Deploy all components automatically
-cd "$PROJECT_ROOT"
+cd ""$PROJECT_ROOT""
 
 echo "🔐 Deploying security stack..."
 kubectl apply -f k8s/security/ --wait=true
 kubectl apply -f k8s/policies/ --wait=true
 
 echo "📊 Deploying monitoring..."
-if [ "$ENV" = "prod" ]; then
+if [ ""$ENV"" = "prod" ]; then
     kubectl apply -f k8s/monitoring/prometheus-prod.yaml --wait=true
     kubectl apply -f k8s/monitoring/grafana-prod.yaml --wait=true
 else

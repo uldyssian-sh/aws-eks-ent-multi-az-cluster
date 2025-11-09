@@ -21,21 +21,21 @@ else
     echo "❌ Failed to access pods"
     exit 1
 fi
-echo "📊 Pods running as root: $INSECURE_PODS"
+echo "📊 Pods running as root: "$INSECURE_PODS""
 
 # Check network policies
 echo "🌐 Checking network policies..."
 if kubectl get namespaces >/dev/null 2>&1 && command -v jq >/dev/null 2>&1; then
     NAMESPACES_WITHOUT_NETPOL=$(kubectl get namespaces -o json | jq -r '.items[] | select(.metadata.name != "kube-system" and .metadata.name != "kube-public") | .metadata.name' | while read -r ns; do
-        if ! kubectl get networkpolicy -n "$ns" >/dev/null 2>&1; then
-            echo "$ns"
+        if ! kubectl get networkpolicy -n ""$ns"" >/dev/null 2>&1; then
+            echo ""$ns""
         fi
     done | wc -l)
 else
     echo "❌ kubectl or jq not available"
     exit 1
 fi
-echo "📊 Namespaces without network policies: $NAMESPACES_WITHOUT_NETPOL"
+echo "📊 Namespaces without network policies: "$NAMESPACES_WITHOUT_NETPOL""
 
 # Check secrets encryption
 echo "🔑 Checking secrets encryption..."
@@ -47,11 +47,11 @@ PASSED_CHECKS=$((4 - (INSECURE_PODS > 0 ? 1 : 0) - (NAMESPACES_WITHOUT_NETPOL > 
 SECURITY_SCORE=$((PASSED_CHECKS * 100 / TOTAL_CHECKS))
 
 echo "📊 Security Audit Summary:"
-echo "   Security Score: $SECURITY_SCORE/100"
-echo "   Insecure pods: $INSECURE_PODS"
-echo "   Unprotected namespaces: $NAMESPACES_WITHOUT_NETPOL"
+echo "   Security Score: "$SECURITY_SCORE"/100"
+echo "   Insecure pods: "$INSECURE_PODS""
+echo "   Unprotected namespaces: "$NAMESPACES_WITHOUT_NETPOL""
 
-if [ $SECURITY_SCORE -ge 90 ]; then
+if [ "$SECURITY_SCORE" -ge 90 ]; then
     echo "✅ Security audit passed!"
 else
     echo "⚠️ Security improvements needed"
