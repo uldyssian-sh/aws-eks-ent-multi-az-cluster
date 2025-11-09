@@ -60,7 +60,6 @@ terraform validate
 - Link to related issues
 - Security review completed
 - Tests passing
-- Documentation updated
 
 #### PR Template
 ```markdown
