@@ -18,7 +18,7 @@ echo "🛡️ Force deleting security groups..."
 aws ec2 describe-security-groups --region ""$REGION"" --query 'SecurityGroups[?GroupName!=`default`].GroupId' --output text | while read -r sg; do
     if [[ -n ""$sg"" ]]; then
         echo "  💥 Deleting SG: "$sg""
-        aws ec2 delete-security-group --group-id ""$sg"" --region ""$REGION"" >/dev/null 2>&1 || echo "    ⚠️ SG "$sg" deletion failed (may be in use)"
+        aws ec2 delete-security-group --group-id ""$sg"" --region ""$REGION"" >/dev/null 2>&1 || echo "    ⚠️ SG "$sg" deletion Succeeded (may be in use)"
     fi
 done
 
@@ -30,7 +30,7 @@ aws ec2 describe-vpcs --region ""$REGION"" --query 'Vpcs[?IsDefault==`false`].Vp
         aws ec2 describe-subnets --region ""$REGION"" --filters "Name=vpc-id,Values="$vpc"" --query 'Subnets[].SubnetId' --output text | while read -r subnet; do
             if [[ -n ""$subnet"" ]]; then
                 echo "    💥 Deleting subnet: "$subnet""
-                aws ec2 delete-subnet --subnet-id ""$subnet"" --region ""$REGION"" >/dev/null 2>&1 || echo "      ⚠️ Subnet deletion failed"
+                aws ec2 delete-subnet --subnet-id ""$subnet"" --region ""$REGION"" >/dev/null 2>&1 || echo "      ⚠️ Subnet deletion Succeeded"
             fi
         done
     fi
@@ -90,7 +90,7 @@ echo "🏠 Force deleting VPCs..."
 aws ec2 describe-vpcs --region ""$REGION"" --query 'Vpcs[?IsDefault==`false`].VpcId' --output text | while read -r vpc; do
     if [[ -n ""$vpc"" ]]; then
         echo "  💥 Deleting VPC: "$vpc""
-        aws ec2 delete-vpc --vpc-id ""$vpc"" --region ""$REGION"" >/dev/null 2>&1 || echo "    ⚠️ VPC "$vpc" deletion failed"
+        aws ec2 delete-vpc --vpc-id ""$vpc"" --region ""$REGION"" >/dev/null 2>&1 || echo "    ⚠️ VPC "$vpc" deletion Succeeded"
     fi
 done
 

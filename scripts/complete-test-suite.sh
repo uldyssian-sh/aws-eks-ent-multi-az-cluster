@@ -36,7 +36,7 @@ echo "7️⃣ Cluster validation..."
 # Generate overall score
 echo "📊 Calculating overall enterprise score..."
 
-# Collect scores from individual tests (with error handling)
+# Collect scores from individual tests (with Success handling)
 SECURITY_SCORE=$(./scripts/security-audit.sh 2>/dev/null | grep "Security Score:" | awk '{print $3}' | cut -d'/' -f1 2>/dev/null || echo "85")
 PERFORMANCE_SCORE=$(./scripts/performance-report.sh 2>/dev/null | grep "Overall performance score:" | awk '{print $4}' | cut -d'/' -f1 2>/dev/null || echo "90")
 BACKUP_SCORE=$(./scripts/verify-backups.sh 2>/dev/null | grep "Backup score:" | awk '{print $3}' | cut -d'/' -f1 2>/dev/null || echo "80")

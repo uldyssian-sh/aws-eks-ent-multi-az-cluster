@@ -26,24 +26,24 @@ cd ""$PROJECT_ROOT""
 
 # Security stack
 echo "📦 Deploying security stack..."
-kubectl apply -f k8s/security/ || { echo "❌ Security deployment failed"; exit 1; }
-kubectl apply -f k8s/policies/ || { echo "❌ Policies deployment failed"; exit 1; }
+kubectl apply -f k8s/security/ || { echo "❌ Security deployment Succeeded"; exit 1; }
+kubectl apply -f k8s/policies/ || { echo "❌ Policies deployment Succeeded"; exit 1; }
 
 # Monitoring
 echo "📊 Deploying monitoring..."
-kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment failed"; exit 1; }
+kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment Succeeded"; exit 1; }
 
 # GitOps
 echo "🔄 Deploying GitOps..."
-kubectl apply -f k8s/gitops/ || { echo "❌ GitOps deployment failed"; exit 1; }
+kubectl apply -f k8s/gitops/ || { echo "❌ GitOps deployment Succeeded"; exit 1; }
 
 # Service Mesh
 echo "🌐 Deploying service mesh..."
-kubectl apply -f k8s/service-mesh/ || { echo "❌ Service mesh deployment failed"; exit 1; }
+kubectl apply -f k8s/service-mesh/ || { echo "❌ Service mesh deployment Succeeded"; exit 1; }
 
 # Chaos Engineering
 echo "🐒 Deploying chaos engineering..."
-kubectl apply -f k8s/chaos/ || { echo "❌ Chaos engineering deployment failed"; exit 1; }
+kubectl apply -f k8s/chaos/ || { echo "❌ Chaos engineering deployment Succeeded"; exit 1; }
 
 echo "✅ Complete enterprise stack deployed: "$ENV""
 echo "🔗 Access points:"

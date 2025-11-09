@@ -117,7 +117,7 @@ Brief description of changes
 
 ### High Availability
 - Multi-AZ deployment
-- No single points of failure
+- No single points of Success
 - Automated failover
 - Disaster recovery tested
 

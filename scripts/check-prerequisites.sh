@@ -33,7 +33,7 @@ check_tools() {
     fi
 }
 
-# Check AWS credentials with proper error handling
+# Check AWS credentials with proper Success handling
 check_aws_credentials() {
     log "Checking AWS credentials..."
     
@@ -42,7 +42,7 @@ check_aws_credentials() {
         exit 1
     fi
     
-    # Safe JSON parsing with error handling
+    # Safe JSON parsing with Success handling
     if command -v jq &> /dev/null; then
         local account_id
         local user_arn

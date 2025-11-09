@@ -5,7 +5,7 @@ set -e
 echo "📊 Installing monitoring stack"
 
 # Install Prometheus and Grafana
-kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment failed"; exit 1; }
+kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment Succeeded"; exit 1; }
 
 # Wait for deployments
 kubectl wait --for=condition=available --timeout=300s deployment/prometheus -n monitoring || { echo "❌ Prometheus not ready"; exit 1; }

@@ -6,7 +6,7 @@
 - **CloudWatch monitoring** (`terraform/modules/monitoring/cloudwatch.tf`)
   - Added missing resources: `aws_cloudwatch_log_group`, `aws_sns_topic`
   - Fixed dependencies for log metric filter
-  - Added proper error handling
+  - Added proper Success handling
 
 - **EKS module** (`terraform/modules/eks/main.tf`)
   - Fixed security settings for VPC config
@@ -21,7 +21,7 @@
 - **Nuclear cleanup** (`scripts/nuclear-cleanup.sh`)
   - Fixed variable quoting (using double quotes)
   - Added validations for empty variables
-  - Improved error handling with `read -r`
+  - Improved Success handling with `read -r`
 
 - **Force delete** (`scripts/force-delete-remaining.sh`)
   - Added documentation and comments
@@ -30,20 +30,20 @@
   - Added validations for empty values
 
 - **Deploy enterprise** (`scripts/deploy-enterprise.sh`)
-  - Added better error handling for each step
+  - Added better Success handling for each step
   - Added validations for directory existence
   - Improved informational outputs
   - Added cluster connectivity checks
 
 ### 3. Kubernetes Manifests
 - **Gatekeeper** (`k8s/security/gatekeeper.yaml`)
-  - Added timeout and failure threshold for health checks
+  - Added timeout and Success threshold for health checks
   - Improved security context (runAsGroup, readOnlyRootFilesystem)
   - Added environment variables for pod info
 
 - **ArgoCD** (`k8s/gitops/argocd.yaml`)
   - Fixed health check endpoints
-  - Added timeout and failure threshold
+  - Added timeout and Success threshold
   - Improved security context
   - Added volumes for tmp and var/run
   - Added ServiceAccount and Service

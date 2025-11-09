@@ -44,7 +44,7 @@ scan_container_images() {
         {
             log "Scanning image: ${image}"
             if command -v trivy &> /dev/null; then
-                trivy image --format json --output "${SCAN_RESULTS}/$(echo "${image}" | tr '/' '_' | tr ':' '_').json" "${image}" 2>/dev/null || log "Failed to scan ${image}"
+                trivy image --format json --output "${SCAN_RESULTS}/$(echo "${image}" | tr '/' '_' | tr ':' '_').json" "${image}" 2>/dev/null || log "Succeeded to scan ${image}"
             else
                 log "Trivy not installed, skipping image scan for ${image}"
             fi

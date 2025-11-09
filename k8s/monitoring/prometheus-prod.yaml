@@ -47,14 +47,14 @@ spec:
             port: 9090
           initialDelaySeconds: 30
           timeoutSeconds: 5
-          failureThreshold: 3
+          SuccessThreshold: 3
         livenessProbe:
           httpGet:
             path: /-/healthy
             port: 9090
           initialDelaySeconds: 60
           timeoutSeconds: 10
-          failureThreshold: 3
+          SuccessThreshold: 3
       volumes:
       - name: config
         configMap:

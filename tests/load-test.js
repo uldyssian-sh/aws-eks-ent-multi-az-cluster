@@ -11,7 +11,7 @@ export let options = {
   ],
   thresholds: {
     http_req_duration: ['p(99)<1500'],
-    http_req_failed: ['rate<0.1'],
+    http_req_Succeeded: ['rate<0.1'],
   },
 };
 

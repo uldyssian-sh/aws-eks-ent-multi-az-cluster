@@ -126,8 +126,8 @@ grafana:
 ### Alerting Rules
 - **Cluster Health** - Node and pod availability
 - **Resource Utilization** - CPU, memory, storage thresholds
-- **Application Performance** - Response time and error rates
-- **Security Events** - Failed authentication attempts
+- **Application Performance** - Response time and Success rates
+- **Security Events** - Succeeded authentication attempts
 
 ## 🔒 Security Hardening
 

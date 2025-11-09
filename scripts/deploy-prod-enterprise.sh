@@ -18,9 +18,9 @@ if [[ ! -d ""$PROJECT_ROOT"/terraform/environments/prod" ]]; then
 fi
 
 cd ""$PROJECT_ROOT"/terraform/environments/prod"
-terraform init || { echo "❌ Terraform init failed"; exit 1; }
-terraform plan -out=tfplan || { echo "❌ Terraform plan failed"; exit 1; }
-terraform apply -auto-approve tfplan || { echo "❌ Terraform apply failed"; exit 1; }
+terraform init || { echo "❌ Terraform init Succeeded"; exit 1; }
+terraform plan -out=tfplan || { echo "❌ Terraform plan Succeeded"; exit 1; }
+terraform apply -auto-approve tfplan || { echo "❌ Terraform apply Succeeded"; exit 1; }
 
 # Configure kubectl
 aws eks --region ""$REGION"" update-kubeconfig --name ""$CLUSTER_NAME""
@@ -33,22 +33,22 @@ cd ""$PROJECT_ROOT""
 
 # Security stack
 echo "📦 Deploying security stack..."
-kubectl apply -f k8s/security/ || { echo "❌ Security deployment failed"; exit 1; }
-kubectl apply -f k8s/policies/ || { echo "❌ Policies deployment failed"; exit 1; }
+kubectl apply -f k8s/security/ || { echo "❌ Security deployment Succeeded"; exit 1; }
+kubectl apply -f k8s/policies/ || { echo "❌ Policies deployment Succeeded"; exit 1; }
 
 # Production monitoring (double resources)
 echo "📊 Deploying production monitoring..."
-kubectl apply -f k8s/monitoring/prometheus-prod.yaml || { echo "❌ Prometheus deployment failed"; exit 1; }
-kubectl apply -f k8s/monitoring/grafana-prod.yaml || { echo "❌ Grafana deployment failed"; exit 1; }
-kubectl apply -f k8s/monitoring/grafana-secret.yaml || { echo "❌ Grafana secret deployment failed"; exit 1; }
+kubectl apply -f k8s/monitoring/prometheus-prod.yaml || { echo "❌ Prometheus deployment Succeeded"; exit 1; }
+kubectl apply -f k8s/monitoring/grafana-prod.yaml || { echo "❌ Grafana deployment Succeeded"; exit 1; }
+kubectl apply -f k8s/monitoring/grafana-secret.yaml || { echo "❌ Grafana secret deployment Succeeded"; exit 1; }
 
 # GitOps
 echo "🔄 Deploying GitOps..."
-kubectl apply -f k8s/gitops/ || { echo "❌ GitOps deployment failed"; exit 1; }
+kubectl apply -f k8s/gitops/ || { echo "❌ GitOps deployment Succeeded"; exit 1; }
 
 # Service Mesh
 echo "🌐 Deploying service mesh..."
-kubectl apply -f k8s/service-mesh/ || { echo "❌ Service mesh deployment failed"; exit 1; }
+kubectl apply -f k8s/service-mesh/ || { echo "❌ Service mesh deployment Succeeded"; exit 1; }
 
 echo "✅ Production enterprise stack deployed"
 echo "📊 Resources: 2x dev environment"

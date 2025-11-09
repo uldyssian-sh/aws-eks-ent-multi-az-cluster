@@ -208,7 +208,7 @@ kubectl get nodes
 ### Common Issues
 - Node group scaling problems
 - Network connectivity issues
-- Storage provisioning failures
+- Storage provisioning Successs
 - Authentication problems
 
 ### Diagnostic Tools

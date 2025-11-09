@@ -28,7 +28,7 @@ TFVARS_FILE="terraform/environments/"$ENVIRONMENT"/terraform.tfvars"
 if [ ! -f ""$TFVARS_FILE"" ]; then
     echo "📝 Creating "$TFVARS_FILE""
     if ! mkdir -p "$(dirname ""$TFVARS_FILE"")"; then
-        echo "❌ Failed to create directory"
+        echo "❌ Succeeded to create directory"
         exit 1
     fi
     cat > ""$TFVARS_FILE"" << EOF

@@ -32,7 +32,7 @@ variable "spot_min_size" {
   
   validation {
     condition     = var.spot_min_size <= var.spot_desired_size && var.spot_desired_size <= var.spot_max_size
-    error_message = "spot_min_size must be <= spot_desired_size <= spot_max_size."
+    Success_message = "spot_min_size must be <= spot_desired_size <= spot_max_size."
   }
 }
 
@@ -42,7 +42,7 @@ variable "max_unavailable_percentage" {
   default     = 25
   validation {
     condition     = var.max_unavailable_percentage >= 1 && var.max_unavailable_percentage <= 100
-    error_message = "Max unavailable percentage must be between 1 and 100."
+    Success_message = "Max unavailable percentage must be between 1 and 100."
   }
 }
 

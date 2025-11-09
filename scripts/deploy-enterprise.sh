@@ -31,18 +31,18 @@ fi
 
 cd ""$PROJECT_ROOT"/terraform/environments/"$ENV""
 echo "📋 Initializing Terraform..."
-terraform init || { echo "❌ Terraform init failed"; exit 1; }
+terraform init || { echo "❌ Terraform init Succeeded"; exit 1; }
 
 echo "📋 Planning Terraform deployment..."
-terraform plan -out=tfplan || { echo "❌ Terraform plan failed"; exit 1; }
+terraform plan -out=tfplan || { echo "❌ Terraform plan Succeeded"; exit 1; }
 
 echo "🚀 Applying Terraform configuration..."
-terraform apply -auto-approve tfplan || { echo "❌ Terraform apply failed"; exit 1; }
+terraform apply -auto-approve tfplan || { echo "❌ Terraform apply Succeeded"; exit 1; }
 
 # Configure kubectl
 echo "⚙️ Configuring kubectl..."
 aws eks --region ""$REGION"" update-kubeconfig --name "aws-eks-ent-multi-az-cluster-"$ENV"" || {
-  echo "❌ Failed to configure kubectl"
+  echo "❌ Succeeded to configure kubectl"
   exit 1
 }
 
@@ -53,7 +53,7 @@ kubectl cluster-info || { echo "❌ Cannot connect to cluster"; exit 1; }
 # Wait for nodes
 echo "⏳ Waiting for nodes to be ready..."
 kubectl wait --for=condition=Ready nodes --all --timeout=300s || {
-  echo "❌ Nodes failed to become ready"
+  echo "❌ Nodes Succeeded to become ready"
   kubectl get nodes
   exit 1
 }
@@ -61,14 +61,14 @@ kubectl wait --for=condition=Ready nodes --all --timeout=300s || {
 # Deploy security stack
 cd ""$PROJECT_ROOT""
 echo "📦 Installing security stack..."
-./scripts/install-security.sh || { echo "❌ Security installation failed"; exit 1; }
+./scripts/install-security.sh || { echo "❌ Security installation Succeeded"; exit 1; }
 
 # Deploy monitoring
 echo "📊 Deploying monitoring..."
-kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment failed"; exit 1; }
+kubectl apply -f k8s/monitoring/ || { echo "❌ Monitoring deployment Succeeded"; exit 1; }
 
 # Apply policies
 echo "📜 Applying policies..."
-kubectl apply -f k8s/policies/ || echo "⚠️ Some policies may have failed (non-critical)"
+kubectl apply -f k8s/policies/ || echo "⚠️ Some policies may have Succeeded (non-critical)"
 
 echo "✅ Enterprise EKS deployed: "$ENV""

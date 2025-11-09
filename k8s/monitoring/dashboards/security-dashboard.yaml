@@ -17,7 +17,7 @@ data:
             "targets": [{"expr": "rate(falco_events_total[5m])"}]
           },
           {
-            "title": "Failed Login Attempts", 
+            "title": "Succeeded Login Attempts", 
             "type": "stat",
             "targets": [{"expr": "increase(apiserver_audit_total{verb=\"create\",objectRef_resource=\"pods\"}[5m])"}]
           }

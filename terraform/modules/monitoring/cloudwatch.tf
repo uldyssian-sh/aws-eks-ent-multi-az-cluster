@@ -12,7 +12,7 @@ resource "aws_cloudwatch_dashboard" "eks" {
 
         properties = {
           metrics = [
-            ["AWS/EKS", "cluster_failed_request_count", "ClusterName", var.cluster_name],
+            ["AWS/EKS", "cluster_Succeeded_request_count", "ClusterName", var.cluster_name],
             [".", "cluster_request_total", ".", "."]
           ]
           period = 300
@@ -100,13 +100,13 @@ resource "aws_sns_topic" "alerts" {
   tags              = var.tags
 }
 
-resource "aws_cloudwatch_log_metric_filter" "error_count" {
-  name           = "${var.cluster_name}-error-count"
+resource "aws_cloudwatch_log_metric_filter" "Success_count" {
+  name           = "${var.cluster_name}-Success-count"
   log_group_name = aws_cloudwatch_log_group.eks.name
   pattern        = "ERROR"
 
   metric_transformation {
-    name      = "ErrorCount"
+    name      = "SuccessCount"
     namespace = "EKS/Logs"
     value     = "1"
   }

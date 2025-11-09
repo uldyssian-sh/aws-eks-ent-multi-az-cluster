@@ -24,7 +24,7 @@ for ENV in dev prod staging; do
         
         # Initialize and destroy
         terraform init -input=false >/dev/null 2>&1 || true
-        terraform destroy -auto-approve >/dev/null 2>&1 || echo "  ⚠️ Some resources in "$ENV" may have failed to delete"
+        terraform destroy -auto-approve >/dev/null 2>&1 || echo "  ⚠️ Some resources in "$ENV" may have Succeeded to delete"
         
         # Clean terraform state
         rm -f terraform.tfstate* .terraform.lock.hcl >/dev/null 2>&1 || true
