@@ -137,3 +137,4 @@ resource "aws_iam_policy" "node_group_additional" {
 
   tags = var.tags
 }# Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

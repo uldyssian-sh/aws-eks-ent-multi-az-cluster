@@ -43,3 +43,4 @@ kubectl rollout status deployment/grafana -n monitoring --timeout=300s || true
 
 echo "✅ Cluster update completed for: $ENV"# Updated Sun Nov  9 12:50:06 CET 2025
 # Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

@@ -50,3 +50,4 @@ Both environments have identical security:
 - **Prod**: Optimized for performance (~$800/month)
 - **Spot savings**: 60-90% on compute costs# Updated Sun Nov  9 12:50:06 CET 2025
 # Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

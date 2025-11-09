@@ -120,3 +120,4 @@ resource "aws_iam_role_policy_attachment" "node_group_AmazonEC2ContainerRegistry
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.node_group.name
 }# Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

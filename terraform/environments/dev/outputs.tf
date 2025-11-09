@@ -27,3 +27,4 @@ output "configure_kubectl" {
   description = "Configure kubectl: make sure you're logged in with the correct AWS profile and run the following command to update your kubeconfig"
   value       = "aws eks --region ${var.region} update-kubeconfig --name ${try(module.eks.cluster_id, var.cluster_name)}"
 }# Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

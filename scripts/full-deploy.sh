@@ -19,3 +19,4 @@ AWS_REGION=${EKS_AWS_REGION:-us-west-2}
 
 echo "🎉 Full deployment completed successfully!"# Updated Sun Nov  9 12:50:06 CET 2025
 # Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

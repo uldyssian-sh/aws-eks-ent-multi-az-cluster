@@ -113,3 +113,4 @@ resource "aws_cloudwatch_log_metric_filter" "error_count" {
 
   depends_on = [aws_cloudwatch_log_group.eks]
 }# Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

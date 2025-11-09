@@ -9,3 +9,4 @@ resource "aws_cloudwatch_log_group" "eks" {
   kms_key_id        = var.kms_key_arn
   tags              = var.tags
 }# Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

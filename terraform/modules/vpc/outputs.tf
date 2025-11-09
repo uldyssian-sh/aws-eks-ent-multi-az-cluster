@@ -32,3 +32,4 @@ output "nat_gateway_ids" {
   description = "List of IDs of the NAT Gateways"
   value       = aws_nat_gateway.main[*].id
 }# Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025

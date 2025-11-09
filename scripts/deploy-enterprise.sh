@@ -73,3 +73,4 @@ kubectl apply -f k8s/policies/ || echo "⚠️ Some policies may have failed (no
 
 echo "✅ Enterprise EKS deployed: $ENV"# Updated Sun Nov  9 12:50:06 CET 2025
 # Updated Sun Nov  9 12:52:18 CET 2025
+# Updated Sun Nov  9 12:56:40 CET 2025
