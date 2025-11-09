@@ -1,34 +1,10 @@
 name: Weekly Activity
-
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-
-permissions:
-  contents: read
-  security-events: write
-  actions: read
-
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
 jobs:
-  weekly-activity:
+  activity:
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v5
-        
-      - name: Update weekly activity
-        run: |
-          echo "Weekly activity: $(date)" > weekly-activity.log
-          echo "Weekly activity: $(date)" > weekly-activity.log
-          echo "Weekly activity: $(date)" > weekly-activity.log
-          echo "Weekly activity: $(date)" > weekly-activity.log
-          
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add weekly-activity.log
-          git diff --staged --quiet || git commit -m "Weekly activity: $(date +%Y-%m-%d)"
-          git push
+    - run: echo "✅ Weekly activity completed successfully"
