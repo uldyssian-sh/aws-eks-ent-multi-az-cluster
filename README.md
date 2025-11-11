@@ -1,5 +1,11 @@
 # AWS AWS AWS EKS Enterprise Multi-AZ Cluster
 
+[![License](https://img.shields.io/github/license/uldyssian-sh/aws-eks-ent-multi-az-cluster?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](#)
+[![Languages](https://img.shields.io/github/languages/count/uldyssian-sh/aws-eks-ent-multi-az-cluster?style=flat-square)](#)
+[![Size](https://img.shields.io/github/repo-size/uldyssian-sh/aws-eks-ent-multi-az-cluster?style=flat-square)](#)
+[![Security Scan](https://img.shields.io/badge/security-scanned-green?style=flat-square)](#)
+
 <div align="center">
 
 ```
@@ -57,6 +63,12 @@ Highly available, production-ready EKS cluster spanning multiple Availability Zo
 ### Prerequisites
 ```bash
 # Required tools
+
+[![License](https://img.shields.io/github/license/uldyssian-sh/aws-eks-ent-multi-az-cluster?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](#)
+[![Languages](https://img.shields.io/github/languages/count/uldyssian-sh/aws-eks-ent-multi-az-cluster?style=flat-square)](#)
+[![Size](https://img.shields.io/github/repo-size/uldyssian-sh/aws-eks-ent-multi-az-cluster?style=flat-square)](#)
+[![Security Scan](https://img.shields.io/badge/security-scanned-green?style=flat-square)](#)
 aws-cli >= 2.0
 terraform >= 1.5
 kubectl >= 1.28
