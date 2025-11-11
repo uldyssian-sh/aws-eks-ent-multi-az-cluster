@@ -19,12 +19,6 @@
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
 ```
-
-[![Terraform](https://img.shields.io/badge/Terraform-1.5+-623CE4.svg)](https://www.terraform.io/)
-[![AWS EKS](https://img.shields.io/badge/AWS-EKS-FF9900.svg)](https://aws.amazon.com/eks/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-1.28+-326CE5.svg)](https://kubernetes.io/)
-[![Multi-AZ](https://img.shields.io/badge/Multi--AZ-High%20Availability-green.svg)](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/)
-
 </div>
 
 ## 🏢 Enterprise-Grade Kubernetes Platform
