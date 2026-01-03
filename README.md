@@ -197,3 +197,4 @@ This project is licensed under the MIT License - see the **[LICENSE](LICENSE)** 
 - **[Community Support](https://github.com/uldyssian-sh/aws-eks-ent-multi-az-cluster/issues)** - Community support and Q&A
 - **[Security Policy](SECURITY.md)** - Vulnerability reporting
 - **[AWS EKS Documentation](https://docs.aws.amazon.com/eks/)** - Official AWS EKS documentation# Trigger deployment
+⭐ Star this repository if you find it helpful!
