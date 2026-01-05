@@ -198,3 +198,6 @@ This project is licensed under the MIT License - see the **[LICENSE](LICENSE)** 
 - **[Security Policy](SECURITY.md)** - Vulnerability reporting
 - **[AWS EKS Documentation](https://docs.aws.amazon.com/eks/)** - Official AWS EKS documentation# Trigger deployment
 ⭐ Star this repository if you find it helpful!
+Maintained by: uldyssian-sh
+
+Disclaimer: Use of this code is at your own risk. Author bears no responsibility for any damages caused by the code.
